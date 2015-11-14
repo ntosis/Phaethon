@@ -575,3 +575,5 @@ void enterSleep(void)
   /* First thing to do is disable sleep. */
   sleep_disable(); 
 }
+
+//add some comment for git test
