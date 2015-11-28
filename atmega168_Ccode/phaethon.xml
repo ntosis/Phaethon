@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdtprojectproperties>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.IncludePaths">
+<language name="s,S,asm">
+<includepath>/home/unix/MyCODE/Eclipse/workspace/Phaethon_Ccode/tm1637</includepath>
+<includepath>/home/unix/MyCODE/Eclipse/workspace/Phaethon_Ccode/ds1307</includepath>
+<includepath>/home/unix/MyCODE/Eclipse/workspace/Phaethon_Ccode/i2c</includepath>
+
+</language>
+<language name="C Source File">
+<includepath>/home/unix/MyCODE/Eclipse/workspace/Phaethon_Ccode</includepath>
+<includepath>/home/unix/MyCODE/Eclipse/workspace/Phaethon_Ccode/i2c</includepath>
+<includepath>/home/unix/MyCODE/Eclipse/workspace/Phaethon_Ccode/ds1307</includepath>
+<includepath>/home/unix/MyCODE/Eclipse/workspace/Phaethon_Ccode/tm1637</includepath>
+
+</language>
+<language name="Object File">
+
+</language>
+</section>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.Macros">
+<language name="s,S,asm">
+
+</language>
+<language name="C Source File">
+
+</language>
+<language name="Object File">
+
+</language>
+</section>
+</cdtprojectproperties>
