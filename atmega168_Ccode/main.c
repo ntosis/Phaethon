@@ -66,30 +66,9 @@ int main(void)
 	sei();
   while(1)
   {
-
-
+	  	  //Task manager runs
 	      dispatchTasks();
 
-	 /* /OLD switch(counter100MS) {
-	  case 0: case 10: case 20:
-		  checkStruct();
-		  break;
-	  case 6: case 11: case 12: case 19:
-		 // updateSollTemperature();
-		 // checkIfButtonIsPressed();
-		  break;
-	  case 13:
-		  //clearDisplay(0,4);
-		  T = roundf(actualTemperature());
-		  showNumberDec((int)returnpnt(), false, 2, 2);
-		  break;
-	  }
-	  // showNumberDec(counter100MS, false, 2, 2);
-	       //__TOGGLE(FAST_RED_LED);
-	 //  updateSollTemperature();
-	  	  //T=GetHH();
-	  	//showNumberDec(T, false, 2, 0);
-	  	  //_delay_ms(1000); */
   }
 }
 void updateSollTemperature() {
