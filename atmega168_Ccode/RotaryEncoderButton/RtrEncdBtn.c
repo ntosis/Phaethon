@@ -54,7 +54,6 @@ void checkStruct() {
                int dt= ((ArrayOfClicks+i+1)->timeOfClick)-((ArrayOfClicks+i)->timeOfClick);
                if(dt<7) {
                  dualclicked=true;
-            	 __TOGGLE(BLUE_LED);
                  //jump to next incoming signal.
                   i++;
                 }
@@ -71,7 +70,6 @@ void checkStruct() {
                dt=abs(dt);
                if(dt<7) {
                dualclicked=true;
-          	 __TOGGLE(BLUE_LED);
                //i++;
              }
                else clicked=true;
