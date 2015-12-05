@@ -16854,6 +16854,15 @@ Source: www.farnell.com/datasheets/247.pdf</description>
 <sheets>
 <sheet>
 <plain>
+<text x="154.94" y="111.76" size="3.81" layer="91">Rotary encoder</text>
+<text x="254" y="109.22" size="3.81" layer="91">DS1307 Real time clock</text>
+<text x="66.04" y="88.9" size="2.54" layer="91" rot="R90">RGB LED</text>
+<text x="180.34" y="17.78" size="3.81" layer="91" rot="R180">on/off switch</text>
+<text x="132.08" y="-33.02" size="3.81" layer="91">Main input/output</text>
+<text x="187.96" y="-5.08" size="2.54" layer="91">TM1637 con.</text>
+<text x="205.74" y="55.88" size="3.81" layer="91">Output controller</text>
+<text x="281.94" y="48.26" size="2.54" layer="91">ADT7301 Temp sens</text>
+<text x="33.02" y="-15.24" size="1.778" layer="91">dc/dc 40V / 5V</text>
 </plain>
 <instances>
 <instance part="J3" gate="A" x="91.44" y="48.26" rot="MR180"/>
