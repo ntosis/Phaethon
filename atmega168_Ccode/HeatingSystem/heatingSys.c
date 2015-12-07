@@ -28,7 +28,8 @@ const uint8_t  SEG_0A[] = {
 void autoProgram() {
 
 
-  long int convertedTime= GetHH()*100 +GetMM();
+  uint16_t convertedTime= GetHH()*100 +GetMM();
+
   uint16_t onTimeAM= pgm_read_word_near(onTimesAM + (GetDoW()-1));
   uint16_t offTimeAM= pgm_read_word_near(offTimesAM + (GetDoW()-1));
   uint16_t onTimePM= pgm_read_word_near(onTimesPM + (GetDoW()-1));
@@ -36,6 +37,7 @@ void autoProgram() {
 
   if((onTimeAM<convertedTime&&convertedTime<offTimeAM)||(onTimePM<convertedTime&&convertedTime<offTimePM)) {
 	  autoProgramTimeEnabled=true;
+
   }
   else
     {
@@ -75,3 +77,7 @@ void flashAutoFunctionIfIsOn() {
 		setSegments(SEG_0A,1,1);
 		}
 	}
+uint16_t returnDebugInfo() {
+	return GetHH()*100 +GetMM();
+
+}

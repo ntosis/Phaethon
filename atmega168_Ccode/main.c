@@ -24,7 +24,7 @@ void updateSollTemperature();
 void showActualTemperature(void);
 void ButtonAction(void);
 void displayController(void);
-void smartSystemControl(void);
+void PIDController(void);
 void commandToRelay(void);
 uint8_t Get_Reference(void);
 uint8_t Get_Measurement(void);
@@ -56,12 +56,15 @@ int main(void)
 	// task2 runs every 1 seconds
 	addTask(2,updateSollTemperature,10);
 	// task3 runs every 2 seconds
-	addTask(3, smartSystemControl, 20);
+	addTask(3, PIDController, 20);
 	// task4 runs every 4 seconds
 	addTask(4, displayController, 40);
 	//task5
 	addTask(5, LEDfunction, 5);
-	addTask(6, commandToRelay, 100);
+	//task 6 autoProgram runs every a min
+	addTask(6,autoProgram,60);
+	//send command to relay
+	addTask(7, commandToRelay, 100);
 	//enable interrupts
 	sei();
   while(1)
@@ -89,14 +92,14 @@ void updateSollTemperature() {
 void showActualTemperature(void) {
 	clearDisplay(0,4);
 	int T = roundf(actualTemperature());
-	showNumberDec(T, false, 2, 2);
+	showNumberDec(T, false, 2,2);
 }
 void ButtonAction(void) {
 	checkStruct();
 	checkIfButtonIsPressed();
 }
-void smartSystemControl() {
-		if(autoProgramSelected){
+void PIDController() {
+		if(autoProgramSelected&&autoProgramTimeEnabled){
 			inputValue = pid_Controller(Get_Reference(), Get_Measurement(), &pidData);
 			Set_Input(inputValue);
 		}

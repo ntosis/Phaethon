@@ -14,9 +14,11 @@
 #include "RtrEncdBtn.h"
 #include "tm1637.h"
 
+void autoProgram();
 void setStateOfHeatingSystem(bool state);
 void LEDfunction(void);
 void flashAutoFunctionIfIsOn(void);
+uint16_t returnDebugInfo();
 extern bool autoProgramSelected;
 extern bool manualProgramSelected;
 extern bool autoProgramTimeEnabled;
