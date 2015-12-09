@@ -15395,14 +15395,6 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <pinref part="POWER" gate="A" pin="3"/>
 </segment>
 </net>
-<net name="PIN12" class="0">
-<segment>
-<wire x1="101.6" y1="48.26" x2="88.9" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="J3" gate="A" pin="5"/>
-<pinref part="J4" gate="A" pin="5"/>
-<label x="109.22" y="48.26" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="+9V" class="0">
 <segment>
 <wire x1="27.94" y1="15.24" x2="40.64" y2="15.24" width="0.1524" layer="91"/>
@@ -15537,14 +15529,6 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <pinref part="J4" gate="A" pin="10"/>
 </segment>
 </net>
-<net name="PIN11" class="0">
-<segment>
-<pinref part="J4" gate="A" pin="4"/>
-<wire x1="101.6" y1="45.72" x2="88.9" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="J3" gate="A" pin="4"/>
-<label x="109.22" y="45.72" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="MOSI" class="0">
 <segment>
 <pinref part="ICSP" gate="A" pin="4"/>
@@ -15556,12 +15540,29 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <wire x1="284.48" y1="27.94" x2="279.4" y2="27.94" width="0.1524" layer="91"/>
 <label x="279.4" y="30.48" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="J4" gate="A" pin="4"/>
+<wire x1="101.6" y1="45.72" x2="88.9" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="J3" gate="A" pin="4"/>
+<label x="109.22" y="45.72" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="SCK" class="0">
 <segment>
 <pinref part="ICSP" gate="A" pin="3"/>
 <wire x1="48.26" y1="71.12" x2="38.1" y2="71.12" width="0.1524" layer="91"/>
 <label x="30.48" y="71.12" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="SCLK"/>
+<wire x1="312.42" y1="17.78" x2="317.5" y2="17.78" width="0.1524" layer="91"/>
+<label x="317.5" y="20.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J4" gate="A" pin="6"/>
+<wire x1="101.6" y1="50.8" x2="88.9" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="J3" gate="A" pin="6"/>
+<label x="109.22" y="50.8" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MISO" class="0">
@@ -15574,6 +15575,12 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <pinref part="U$2" gate="G$1" pin="DOUT"/>
 <wire x1="312.42" y1="38.1" x2="317.5" y2="38.1" width="0.1524" layer="91"/>
 <label x="317.5" y="40.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="101.6" y1="48.26" x2="88.9" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="J3" gate="A" pin="5"/>
+<pinref part="J4" gate="A" pin="5"/>
+<label x="109.22" y="48.26" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -15666,13 +15673,6 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <pinref part="J1" gate="A" pin="5"/>
 <pinref part="J5" gate="A" pin="5"/>
 <label x="109.22" y="15.24" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="SCLK" class="0">
-<segment>
-<pinref part="U$2" gate="G$1" pin="SCLK"/>
-<wire x1="312.42" y1="17.78" x2="317.5" y2="17.78" width="0.1524" layer="91"/>
-<label x="317.5" y="20.32" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -15818,14 +15818,6 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <pinref part="J1" gate="A" pin="2"/>
 <pinref part="J5" gate="A" pin="2"/>
 <label x="109.22" y="22.86" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="PIN13" class="0">
-<segment>
-<pinref part="J4" gate="A" pin="6"/>
-<wire x1="101.6" y1="50.8" x2="88.9" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="J3" gate="A" pin="6"/>
-<label x="109.22" y="50.8" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="OUTPUT1" class="0">
