@@ -132,6 +132,8 @@ void Set_Input(int16_t inputValue)
 else if(inputValue>0) setStateOfHeatingSystem(true);
  // showNumberDec(inputValue, false, 4,0);
 }
+
+//The pin have to be HIGH to turn off the heating system
 void commandToRelay() {
 	if(manualProgramSelected&&onStateofProgram) {
 		if(SOLLtemperature - (roundf(actualTemperature()))>0) {
@@ -144,7 +146,7 @@ void commandToRelay() {
 	    }
 	}
 	else if(autoProgramSelected&&onStateofProgram) {
-		//The PID controller calls the setStateOfHeatingSystem
+		//The PID controller calls the setStateOfHeatingSystem function
 		if(stateOfHeatingSystem) {
 			__LOW(RELAY_PIN);
 		}
@@ -152,6 +154,10 @@ void commandToRelay() {
 			__HIGH(RELAY_PIN);
 		}
 		}
+	//If the Thermostat is in OFF state means that we have two turn off the heating system completely.
+	else if(!onStateofProgram) {
+		__HIGH(RELAY_PIN);
+	}
 }
 void displayController() {
 	static count=0;
