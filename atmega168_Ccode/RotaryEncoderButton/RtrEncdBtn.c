@@ -92,12 +92,12 @@ bool checkIfButtonIsPressed() {
   {
    if(!onStateofProgram) {
    onStateofProgram=true;
-   manualProgramSelected=(!manualProgramSelected);
+   manualProgramSelected=true;
    return true;
       }
    else {
    onStateofProgram=false;
-   manualProgramSelected=(!manualProgramSelected);
+   manualProgramSelected=false;
    autoProgramSelected=false;
    return false;
       }
