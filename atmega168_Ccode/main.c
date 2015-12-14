@@ -54,7 +54,7 @@ int main(void)
 	// task1 runs every 800ms second
 	addTask(1,ButtonAction, 8);
 	// task2 runs every 1 seconds
-	addTask(2,updateSollTemperature,10);
+	addTask(2,updateSollTemperature,7);
 	// task3 runs every 2 seconds
 	addTask(3, PIDController, 20);
 	// task4 runs every 4 seconds
@@ -62,7 +62,7 @@ int main(void)
 	//task5
 	addTask(5, LEDfunction, 5);
 	//task 6 autoProgram runs every a min
-	addTask(6,autoProgram,60);
+	addTask(6,autoProgram,600);
 	//send command to relay
 	addTask(7, commandToRelay, 100);
 	//enable interrupts
