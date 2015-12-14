@@ -11,11 +11,11 @@ const uint8_t  SEG_0A[] = {
 // Sunday->Saturday ontime/offtime
   const uint16_t onTimesAM[7] PROGMEM =
   //ontime
-  {845,615,615,615,615,615,845};
+  {845,550,550,550,550,550,845};
 
   const uint16_t offTimesAM[7] PROGMEM =
   //offtime
-  {1200,705,705,705,705,705,1200};
+  {1200,645,645,645,645,645,1200};
 
   const uint16_t onTimesPM[7] PROGMEM =
   //ontime
@@ -23,7 +23,7 @@ const uint8_t  SEG_0A[] = {
 
   const uint16_t offTimesPM[7] PROGMEM =
   //offtime
-  {2130,2230,2230,2230,2230,2330,2200};
+  {2200,2200,2200,2200,2200,2300,2300};
 
 void autoProgram() {
 
