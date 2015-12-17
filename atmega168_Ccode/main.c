@@ -7,6 +7,7 @@
 #include "timerInterrupt.h"
 #include "pid.h"
 #include "heatingSys.h"
+#include "u8g.h"
 //#include "pinmacros.h"
 /*! \brief P, I and D parameter values
 *
@@ -28,8 +29,12 @@ void PIDController(void);
 void commandToRelay(void);
 uint8_t Get_Reference(void);
 uint8_t Get_Measurement(void);
+void u8g_setup(void);
+void draw(void);
 void Set_Input(int16_t inputValue);
-
+u8g_t u8g;
+int16_t num = -500;
+char buf[80];
 static uint8_t SOLLtemperature = 22;
 static int16_t inputValue;
 struct PID_DATA pidData;
@@ -40,6 +45,7 @@ int main(void)
 
 	//__HIGH(FAST_RED_LED);
 	_delay_ms(500);
+	  u8g_setup();
 	TM1637DisplayInit();
 	initTempSens();
 	initRtrEncoder();
@@ -93,6 +99,11 @@ void showActualTemperature(void) {
 	clearDisplay(0,4);
 	int T = roundf(actualTemperature());
 	showNumberDec(T, false, 2,2);
+	u8g_FirstPage(&u8g);
+	    do
+	    {
+	      draw();
+	    } while ( u8g_NextPage(&u8g) );
 }
 void ButtonAction(void) {
 	checkStruct();
@@ -176,3 +187,16 @@ void displayController() {
 	if(count==3) count=0;
 }
 
+void u8g_setup(void)
+{
+
+  u8g_InitI2C(&u8g, &u8g_dev_ssd1306_128x64_i2c, U8G_I2C_OPT_DEV_1);
+
+}
+void draw(void)
+{
+  sprintf(buf,"Test =%d",num);
+  u8g_SetFont(&u8g, u8g_font_9x15);
+  u8g_DrawStr(&u8g, 0, 15,buf);
+  u8g_DrawStr(&u8g, 0,30,buf);
+}
