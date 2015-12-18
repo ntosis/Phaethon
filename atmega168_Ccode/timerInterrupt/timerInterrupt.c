@@ -34,7 +34,7 @@ ISR (TIMER1_COMPA_vect)
 	// cycle through available tasks
 	        for(uint8_t i=0;i<MAX_TASKS;i++)
 	        {
-	            if( task_list[i].status == RUNNABLE )
+	            if((task_list[i].status == RUNNABLE )&&(task_list[i].delay>0))
 	                task_list[i].delay--;
 	        }
 
