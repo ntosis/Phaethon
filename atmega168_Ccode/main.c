@@ -70,7 +70,7 @@ int main(void)
 	//task 6 autoProgram runs every a min
 	addTask(6,autoProgram,600);
 	//send command to relay
-	addTask(7, commandToRelay, 100);
+	addTask(7, commandToRelay,400);
 	//enable interrupts
 	sei();
   while(1)
@@ -206,4 +206,8 @@ void draw(void)
   u8g_DrawStr(&u8g, 0,40,buf);
   sprintf(buf,"Time= %d:%d",GetHH(),GetMM());
   u8g_DrawStr(&u8g, 0,50,buf);
+  sprintf(buf,"PID= %d",inputValue);
+  u8g_DrawStr(&u8g, 0,60,buf);
+  sprintf(buf,"Relay= %d",stateOfHeatingSystem);
+  u8g_DrawStr(&u8g, 65,10,buf);
 }
