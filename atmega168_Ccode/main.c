@@ -195,8 +195,15 @@ void u8g_setup(void)
 }
 void draw(void)
 {
-  sprintf(buf,"Test =%d",num);
-  u8g_SetFont(&u8g, u8g_font_9x15);
-  u8g_DrawStr(&u8g, 0, 15,buf);
+  sprintf(buf,"StOnOff= %d",onStateofProgram);
+  u8g_SetFont(&u8g, u8g_font_6x10);
+  u8g_DrawStr(&u8g, 0, 10,buf);
+  sprintf(buf,"Man= %d",manualProgramSelected);
+  u8g_DrawStr(&u8g, 0,20,buf);
+  sprintf(buf,"Aut= %d",autoProgramSelected);
   u8g_DrawStr(&u8g, 0,30,buf);
+  sprintf(buf,"TmEnb= %d",autoProgramTimeEnabled);
+  u8g_DrawStr(&u8g, 0,40,buf);
+  sprintf(buf,"Time= %d:%d",GetHH(),GetMM());
+  u8g_DrawStr(&u8g, 0,50,buf);
 }
