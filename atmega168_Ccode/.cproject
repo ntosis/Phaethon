@@ -93,12 +93,12 @@
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/PID"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/tm1637"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/timerInterrupt"/>
-									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/i2c"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/ds1307"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/adt7301"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/SPI"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/RotaryEncoderButton"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/HeatingSystem"/>
+									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/i2c"/>
 								</option>
 								<inputType id="de.innot.avreclipse.tool.assembler.input.703397220" superClass="de.innot.avreclipse.tool.assembler.input"/>
 							</tool>
@@ -112,14 +112,13 @@
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/PID"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/tm1637"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/timerInterrupt"/>
-									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/i2c"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/ds1307"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/adt7301"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/SPI"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/RotaryEncoderButton"/>
-									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/HeatingSystem"/>
+									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/i2c"/>
 								</option>
-								<option id="de.innot.avreclipse.compiler.option.def.699040016" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
+								<option id="de.innot.avreclipse.compiler.option.def.699040016" name="Define Syms (-D)" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="F_CPU=16000000UL"/>
 								</option>
 								<inputType id="de.innot.avreclipse.compiler.winavr.input.1869750004" name="C Source Files" superClass="de.innot.avreclipse.compiler.winavr.input"/>
@@ -129,11 +128,11 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.580232552" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
 							</tool>
 							<tool id="de.innot.avreclipse.tool.linker.winavr.app.release.1305873264" name="AVR C Linker" superClass="de.innot.avreclipse.tool.linker.winavr.app.release">
-								<option id="de.innot.avreclipse.linker.option.otherlinkargs.1577599850" superClass="de.innot.avreclipse.linker.option.otherlinkargs" value="-Wl,--gc-sections" valueType="string"/>
-								<option id="de.innot.avreclipse.linker.option.libs.1285460224" superClass="de.innot.avreclipse.linker.option.libs" valueType="libs">
+								<option id="de.innot.avreclipse.linker.option.otherlinkargs.1577599850" name="Other Arguments" superClass="de.innot.avreclipse.linker.option.otherlinkargs" value="-Wl,--gc-sections" valueType="string"/>
+								<option id="de.innot.avreclipse.linker.option.libs.1285460224" name="Libraries (-l)" superClass="de.innot.avreclipse.linker.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="u8glib"/>
 								</option>
-								<option id="de.innot.avreclipse.linker.option.libpath.457962118" superClass="de.innot.avreclipse.linker.option.libpath" valueType="stringList">
+								<option id="de.innot.avreclipse.linker.option.libpath.457962118" name="Libraries Path (-L)" superClass="de.innot.avreclipse.linker.option.libpath" valueType="stringList">
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/u8glib/Debug"/>
 								</option>
 								<inputType id="de.innot.avreclipse.tool.linker.input.519536427" name="OBJ Files" superClass="de.innot.avreclipse.tool.linker.input">
