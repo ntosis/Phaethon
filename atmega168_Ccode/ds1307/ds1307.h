@@ -4,7 +4,6 @@
 #include <avr/io.h>
 #include <string.h>
 #include <avr/delay.h>
-#include "i2c.h"
 #include "tm1637.h"
 
 void SetTime(char HH,char MM, char SS, char ampm);

@@ -2,31 +2,28 @@
 //Note: 1. Define Clock in Configuration Opetions
 //      2. Define RTC Connections in i2c.h
 #include "ds1307.h"
-
+#include <avr/io.h>
+#include "i2c.h"
+#define ds1307_adr 0B11010000
+char buff[8];
 char mystr[8];
 int temp;
-
+#define I2C_START 0
+#define I2C_DATA  1
+#define I2C_STOP  2
+#define MAX_TRIES 50
 //=================================================================
 //                    RTC1307_READ_WRITE                         //
 //=================================================================
+
+
 uint8_t Read_RTC(char add)
 {
-	uint8_t temp1;
-	I2C_START_TX(0b11010000);
-	i2c_transmit(add);
-	i2c_start();
-	I2C_START_RX(0b11010000);
-	temp1 = i2c_receive(0);
-	i2c_stop();
-	return(temp1);
+	i2c_readReg(ds1307_adr,add,buff,1);
+	return buff[0];
 }
-
 int Write_RTC(char add,char data1)
 {
-	I2C_START_TX(0b11010000);	//device add.
-    i2c_transmit(add);	//Reg. add.
-	i2c_transmit(data1);
-	i2c_stop();
 return 0;
 }
 
