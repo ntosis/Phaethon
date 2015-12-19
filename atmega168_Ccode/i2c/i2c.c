@@ -1,189 +1,104 @@
-
-/****************************************************************************
- Title	:   C  file for the I2C FUNCTIONS library (i2c.c)
- Author:    Chris efstathiou hendrix@otenet.gr
- Date:	    13/Jul/2002
- Software:  AVR-GCC with AVR-AS
- Target:    any AVR device
- Comments:  This software is FREE.
-
-*****************************************************************************/
-
 #include <avr/io.h>
+#include <util/twi.h>
 #include "i2c.h"
 
-#ifndef CONCAT1
-#define CONCAT1(a, b) CONCAT2(a, b)
-#endif
-
-#ifndef CONCAT2
-#define CONCAT2(a, b) a ## b
-#endif
-
-
-/* Conversion of microseconds to the right value for the delay function */
-#define I2C_DELAY	   ( (I2C_DELAY_TIME*(F_CPU/60000))/100 )  
-#define I2C_TIMEOUT	   ( (I2C_TIMEOUT_TIME*(F_CPU/60000))/100 ) 
-
-/* Register name forming */
-#define I2C_SDA_OUT_REG   CONCAT1(PORT, I2C_SDA_PORT)
-#define I2C_SCL_OUT_REG   CONCAT1(PORT, I2C_SCL_PORT)
-#define I2C_SDA_DDR_REG   CONCAT1(DDR, I2C_SDA_PORT)
-#define I2C_SCL_DDR_REG   CONCAT1(DDR, I2C_SCL_PORT)
-#define I2C_SDA_PIN_REG   CONCAT1(PIN, I2C_SDA_PORT)
-#define I2C_SCL_PIN_REG   CONCAT1(PIN, I2C_SCL_PORT)
-
-/* Conversion of microseconds to the right value for the delay function */
-#define I2C_DELAY	  ( (I2C_DELAY_TIME*(F_CPU/60000))/100 )  
-#define I2C_TIMEOUT	  ( (I2C_TIMEOUT_TIME*(F_CPU/60000))/100 ) 
-
-/* Pin states */
-/*
-#define SCL_1() 	  cbi(I2C_SCL_DDR_REG, SCL_PIN)
-#define SCL_0() 	  sbi(I2C_SCL_DDR_REG, SCL_PIN)
-#define SDA_1() 	  cbi(I2C_SDA_DDR_REG, SDA_PIN)
-#define SDA_0() 	  sbi(I2C_SDA_DDR_REG, SDA_PIN)
-*/
-
-#define SCL_1() 	  I2C_SCL_DDR_REG &= ~(1<<SCL_PIN)
-#define SCL_0() 	  I2C_SCL_DDR_REG |= (1<<SCL_PIN)
-#define SDA_1() 	  I2C_SDA_DDR_REG &= ~(1<<SDA_PIN)
-#define SDA_0() 	  I2C_SDA_DDR_REG |= (1<<SDA_PIN)
-
-#define RELEASE_I2C_BUS() { SCL_1(); SDA_1(); }
-
-/*#################################################################################################*/
-
-static void delay(unsigned long us)
+uint8_t i2c_start(uint8_t address)
 {
-	us= us*2;
-	while (us)
-	{
-		asm volatile("nop\n\t"::);
-		asm volatile("nop\n\t"::);
-		us--;
-	}  /* 8 cpu cycles per loop */
- 
+// reset TWI control register
+TWCR = 0;
+// transmit START condition
+TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+// wait for end of transmission
+while( !(TWCR & (1<<TWINT)) );
+// check if the start condition was successfully transmitted
+if((TWSR & 0xF8) != TW_START){ return 1; }
+// load slave address into data register
+TWDR = address;
+// start transmission of address
+TWCR = (1<<TWINT) | (1<<TWEN);
+// wait for end of transmission
+while( !(TWCR & (1<<TWINT)) );
+// check if the device has acknowledged the READ / WRITE mode
+uint8_t twst = TW_STATUS & 0xF8;
+if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+return 0;
 }
-
-/*#################################################################################################*/
-
-void i2c_init(void)
+uint8_t i2c_write(uint8_t data)
 {
-//	cbi(I2C_SDA_OUT_REG, SDA_PIN);
-//	cbi(I2C_SCL_OUT_REG, SCL_PIN);
-
-	I2C_SDA_OUT_REG &= ~(1<<SDA_PIN);
-	I2C_SCL_OUT_REG &= ~(1<<SCL_PIN);
-	
-	RELEASE_I2C_BUS();
-	delay(I2C_TIMEOUT);
-	i2c_start();
-	delay(I2C_TIMEOUT);
-	i2c_stop();
-	delay(I2C_TIMEOUT);
-
-
-return;
+// load data into data register
+TWDR = data;
+// start transmission of data
+TWCR = (1<<TWINT) | (1<<TWEN);
+// wait for end of transmission
+while( !(TWCR & (1<<TWINT)) );
+if( (TWSR & 0xF8) != TW_MT_DATA_ACK ){ return 1; }
+return 0;
 }
-/*#################################################################################################*/
-
-void i2c_start(void)
+uint8_t i2c_read_ack(void)
 {
-	RELEASE_I2C_BUS();
-	delay(I2C_DELAY);
-	SDA_0();
-	delay(I2C_DELAY);
-	SCL_0();
-	delay(I2C_DELAY);
-
-return;
+// start TWI module and acknowledge data after reception
+TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA);
+// wait for end of transmission
+while( !(TWCR & (1<<TWINT)) );
+// return received data from TWDR
+return TWDR;
 }
-/*#################################################################################################*/
-
+uint8_t i2c_read_nack(void)
+{
+// start receiving without acknowledging reception
+TWCR = (1<<TWINT) | (1<<TWEN);
+// wait for end of transmission
+while( !(TWCR & (1<<TWINT)) );
+// return received data from TWDR
+return TWDR;
+}
+uint8_t i2c_transmit(uint8_t address, uint8_t* data, uint16_t length)
+{
+if (i2c_start(address | I2C_WRITE)) return 1;
+for (uint16_t i = 0; i < length; i++)
+{
+if (i2c_write(data[i])) return 1;
+}
+i2c_stop();
+return 0;
+}
+uint8_t i2c_receive(uint8_t address, uint8_t* data, uint16_t length)
+{
+if (i2c_start(address | I2C_READ)) return 1;
+for (uint16_t i = 0; i < (length-1); i++)
+{
+data[i] = i2c_read_ack();
+}
+data[(length-1)] = i2c_read_nack();
+i2c_stop();
+return 0;
+}
+uint8_t i2c_writeReg(uint8_t devaddr, uint8_t regaddr, uint8_t* data, uint16_t length)
+{
+if (i2c_start(devaddr | TW_WRITE)) return 1;
+i2c_write(regaddr);
+for (uint16_t i = 0; i < length; i++)
+{
+if (i2c_write(data[i])) return 1;
+}
+i2c_stop();
+return 0;
+}
+uint8_t i2c_readReg(uint8_t devaddr, uint8_t regaddr, uint8_t* data, uint16_t length)
+{
+if (i2c_start(devaddr)) return 1;
+i2c_write(regaddr);
+if (i2c_start(devaddr | TW_READ)) return 1;
+for (uint16_t i = 0; i < (length-1); i++)
+{
+data[i] = i2c_read_ack();
+}
+data[(length-1)] = i2c_read_nack();
+i2c_stop();
+return 0;
+}
 void i2c_stop(void)
 {
-	SDA_0();
-	SCL_1();
-	delay(I2C_DELAY);
-	SDA_1();
-	delay(I2C_DELAY);
-	SCL_0();
-	delay(I2C_DELAY);
-
-return;
+// transmit STOP condition
+TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
 }
-/*#################################################################################################*/
-
-unsigned char i2c_transmit(unsigned char data)
-{
-register unsigned char bit=0;
-
-	for(bit=0; bit<=7; bit++)
-	  {
-	      if( data & 0x80 ) { SDA_1(); } else { SDA_0(); }
-	      SCL_1();
-	      delay(I2C_DELAY);
-	      SCL_0();
-	      delay(I2C_DELAY);
-	      data = (data<<1);
-	  }
-	/* Look for AKNOWLEDGE */
-	RELEASE_I2C_BUS();
-	delay(I2C_DELAY);
-
-
-	if( bit_is_clear(I2C_SDA_PIN_REG, SDA_PIN) )
-	 {
-	     SCL_0();
-	     delay(I2C_DELAY);
-	 }
-	else{
-		 delay(I2C_TIMEOUT);
-		 if( bit_is_clear(I2C_SDA_PIN_REG, SDA_PIN) )
-		  {
-		     SCL_0();
-		     delay(I2C_DELAY);
-		  }
-		 else { return(I2C_ERROR_DEVICE_NOT_RESPONDING); }
-	    }
-
-
-	if( bit_is_clear(I2C_SDA_PIN_REG, SDA_PIN) ) 
-	 { 
-	       delay(I2C_TIMEOUT);
-	       if( bit_is_clear(I2C_SDA_PIN_REG, SDA_PIN) ) { return(I2C_ERROR_DEVICE_BUSY); }
-	 }   
-
-
-return(I2C_NO_ERROR);	  
-}
-/*#################################################################################################*/
-
-unsigned char i2c_receive(unsigned char ack)
-{
-register unsigned char bit=0, data=0;
-
-	SDA_1();
-	for(bit=0; bit<=7; bit++)
-	  {
-	      SCL_1();
-	      delay(I2C_DELAY);
-	      data = (data<<1);
-	      if( bit_is_set(I2C_SDA_PIN_REG, SDA_PIN) ) { data++; }
-	      SCL_0();
-	      delay(I2C_DELAY);
-	  }
-	
-	/* if CONTINUE then send AKNOWLEDGE else if QUIT do not send AKNOWLEDGE (send Nack) */	     
-	if(ack==I2C_CONTINUE) { SDA_0(); }  else { SDA_1(); }
-	SCL_1();
-	delay(I2C_DELAY);
-	SCL_0();
-	delay(I2C_DELAY);
-
-return data;
-}
-/*#################################################################################################*/
-
-
