@@ -114,6 +114,7 @@ void PIDController() {
 			inputValue = pid_Controller(Get_Reference(), Get_Measurement(), &pidData);
 			Set_Input(inputValue);
 		}
+		else {pid_Reset_Integrator(&pidData);}
 }
 /*! \brief Read reference value.
  *
