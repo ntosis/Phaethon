@@ -6082,108 +6082,6 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="led">
-<description>&lt;b&gt;LEDs&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;&lt;br&gt;
-Extended by Federico Battaglin &lt;author&gt;&amp;lt;federico.rd@fdpinternational.com&amp;gt;&lt;/author&gt; with DUOLED</description>
-<packages>
-<package name="GM5WA94310A">
-<description>&lt;b&gt;Chip LED&lt;/b&gt; RGB&lt;p&gt;
-Source: http://document.sharpsma.com/files/GM5WA94310A_SS.pdf</description>
-<wire x1="-1.5" y1="-1.5" x2="1.475" y2="-1.5" width="0.2032" layer="51"/>
-<wire x1="1.475" y1="-1.5" x2="1.475" y2="1.5" width="0.2032" layer="51"/>
-<wire x1="1.475" y1="1.5" x2="-1.5" y2="1.5" width="0.2032" layer="51"/>
-<wire x1="-1.5" y1="1.5" x2="-1.5" y2="-1.5" width="0.2032" layer="51"/>
-<wire x1="-1.2" y1="0.575" x2="-0.95" y2="0.825" width="0.2032" layer="51" curve="-90"/>
-<wire x1="-0.95" y1="0.825" x2="0.95" y2="0.825" width="0.2032" layer="51"/>
-<wire x1="0.95" y1="0.825" x2="1.2" y2="0.575" width="0.2032" layer="51" curve="-90"/>
-<wire x1="1.2" y1="0.575" x2="1.2" y2="-0.575" width="0.2032" layer="51"/>
-<wire x1="1.2" y1="-0.575" x2="0.95" y2="-0.825" width="0.2032" layer="51" curve="-90"/>
-<wire x1="0.95" y1="-0.825" x2="-0.95" y2="-0.825" width="0.2032" layer="51"/>
-<wire x1="-0.95" y1="-0.825" x2="-1.2" y2="-0.575" width="0.2032" layer="51" curve="-90"/>
-<wire x1="-1.2" y1="0.575" x2="-1.2" y2="-0.575" width="0.2032" layer="51"/>
-<smd name="1" x="-0.95" y="-1.675" dx="0.7" dy="1.65" layer="1" stop="no"/>
-<smd name="2" x="0" y="-1.675" dx="0.6" dy="1.65" layer="1" stop="no"/>
-<smd name="3" x="0.95" y="-1.675" dx="0.7" dy="1.65" layer="1" stop="no"/>
-<smd name="4" x="0.95" y="1.675" dx="0.7" dy="1.65" layer="1" rot="R180" stop="no"/>
-<smd name="5" x="0" y="1.675" dx="0.6" dy="1.65" layer="1" rot="R180" stop="no"/>
-<smd name="6" x="-0.95" y="1.675" dx="0.7" dy="1.65" layer="1" rot="R180" stop="no"/>
-<text x="-1.778" y="-2.286" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-<text x="3.048" y="-2.286" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-1.375" y1="-2.575" x2="-0.525" y2="-0.775" layer="29"/>
-<rectangle x1="-0.375" y1="-2.575" x2="0.375" y2="-0.775" layer="29"/>
-<rectangle x1="0.525" y1="-2.575" x2="1.375" y2="-0.775" layer="29"/>
-<rectangle x1="0.525" y1="0.775" x2="1.375" y2="2.575" layer="29" rot="R180"/>
-<rectangle x1="-0.375" y1="0.775" x2="0.375" y2="2.575" layer="29" rot="R180"/>
-<rectangle x1="-1.375" y1="0.775" x2="-0.525" y2="2.575" layer="29" rot="R180"/>
-<rectangle x1="-0.25" y1="1.575" x2="0.25" y2="1.75" layer="51"/>
-<rectangle x1="-1.2" y1="1.575" x2="-0.7" y2="1.75" layer="51"/>
-<rectangle x1="0.7" y1="1.575" x2="1.2" y2="1.75" layer="51"/>
-<rectangle x1="-0.25" y1="-1.75" x2="0.25" y2="-1.575" layer="51" rot="R180"/>
-<rectangle x1="0.7" y1="-1.75" x2="1.2" y2="-1.575" layer="51" rot="R180"/>
-<rectangle x1="-1.2" y1="-1.75" x2="-0.7" y2="-1.575" layer="51" rot="R180"/>
-<polygon width="0.2032" layer="51">
-<vertex x="-1.5" y="-1.5"/>
-<vertex x="-1.025" y="-1.5"/>
-<vertex x="-0.95" y="-1.5"/>
-<vertex x="-1.5" y="-0.95"/>
-</polygon>
-</package>
-</packages>
-<symbols>
-<symbol name="LED">
-<wire x1="1.27" y1="0" x2="0" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="0" y1="-2.54" x2="-1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="0" y1="-2.54" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="-1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="0" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="-2.032" y1="-0.762" x2="-3.429" y2="-2.159" width="0.1524" layer="94"/>
-<wire x1="-1.905" y1="-1.905" x2="-3.302" y2="-3.302" width="0.1524" layer="94"/>
-<text x="3.556" y="-4.572" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<text x="5.715" y="-4.572" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
-<pin name="C" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
-<pin name="A" x="0" y="2.54" visible="off" length="short" direction="pas" rot="R270"/>
-<polygon width="0.1524" layer="94">
-<vertex x="-3.429" y="-2.159"/>
-<vertex x="-3.048" y="-1.27"/>
-<vertex x="-2.54" y="-1.778"/>
-</polygon>
-<polygon width="0.1524" layer="94">
-<vertex x="-3.302" y="-3.302"/>
-<vertex x="-2.921" y="-2.413"/>
-<vertex x="-2.413" y="-2.921"/>
-</polygon>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="GM5WA94310A" prefix="LED">
-<description>&lt;b&gt;Chip LED&lt;/b&gt; RGB&lt;p&gt;
-Source: http://document.sharpsma.com/files/GM5WA94310A_SS.pdf</description>
-<gates>
-<gate name="R" symbol="LED" x="-10.16" y="0" addlevel="always" swaplevel="1"/>
-<gate name="G" symbol="LED" x="0" y="0" addlevel="always" swaplevel="1"/>
-<gate name="B" symbol="LED" x="10.16" y="0" addlevel="always" swaplevel="1"/>
-</gates>
-<devices>
-<device name="" package="GM5WA94310A">
-<connects>
-<connect gate="B" pin="A" pad="1"/>
-<connect gate="B" pin="C" pad="6"/>
-<connect gate="G" pin="A" pad="3"/>
-<connect gate="G" pin="C" pad="4"/>
-<connect gate="R" pin="A" pad="2"/>
-<connect gate="R" pin="C" pad="5"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="transistor">
 <description>&lt;b&gt;Transistors&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -14931,6 +14829,214 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="Wuerth_Elektronik_LEDs_rev15b">
+<description>&lt;BR&gt;Würth Elektronik --Signal LEDs,White LEDs&lt;br&gt;&lt;Hr&gt;
+&lt;BR&gt;&lt;BR&gt; 
+&lt;TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0&gt;
+&lt;TR&gt;   
+&lt;TD BGCOLOR="#cccccc" ALIGN=CENTER&gt;&lt;FONT FACE=ARIAL SIZE=3&gt;&lt;BR&gt;&lt;br&gt;
+      &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&lt;BR&gt;
+       &lt;BR&gt;
+       &lt;BR&gt;
+       &lt;BR&gt;&lt;BR&gt;&lt;/FONT&gt;
+    &lt;/TD&gt;
+&lt;TD BGCOLOR="#cccccc" ALIGN=CENTER&gt;&lt;FONT FACE=ARIAL SIZE=3&gt;&lt;br&gt;
+      -----&lt;BR&gt;
+      -----&lt;BR&gt;
+      -----&lt;BR&gt;
+      -----&lt;BR&gt;
+      -----&lt;BR&gt;&lt;BR&gt;&lt;/FONT&gt;
+    &lt;/TD&gt;
+    &lt;TD BGCOLOR="#cccccc" ALIGN=CENTER&gt; &lt;FONT FACE=ARIAL SIZE=3&gt;&lt;br&gt;
+      ---------------------------&lt;BR&gt;
+&lt;B&gt;&lt;I&gt;&lt;span style='font-size:26pt;
+  color:#FF6600;'&gt;WE &lt;/span&gt;&lt;/i&gt;&lt;/b&gt;
+&lt;BR&gt;
+      ---------------------------&lt;BR&gt;&lt;b&gt;Würth Elektronik&lt;/b&gt;&lt;/FONT&gt;
+    &lt;/TD&gt;
+    &lt;TD BGCOLOR="#cccccc" ALIGN=CENTER&gt;&lt;FONT FACE=ARIAL SIZE=3&gt;&lt;br&gt;
+      ---------O---&lt;BR&gt;
+      ----O--------&lt;BR&gt;
+      ---------O---&lt;BR&gt;
+      ----O--------&lt;BR&gt;
+      ---------O---&lt;BR&gt;&lt;BR&gt;&lt;/FONT&gt;
+    &lt;/TD&gt;
+   
+&lt;TD BGCOLOR="#cccccc" ALIGN=CENTER&gt;&lt;FONT FACE=ARIAL SIZE=3&gt;&lt;BR&gt;
+      &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&lt;BR&gt;
+       &lt;BR&gt;
+       &lt;BR&gt;
+       &lt;BR&gt;
+       &lt;BR&gt;&lt;BR&gt;&lt;/FONT&gt;
+    &lt;/TD&gt;
+  &lt;/TR&gt;
+
+  &lt;TR&gt;
+    &lt;TD COLSPAN=7&gt;&amp;nbsp;
+    &lt;/TD&gt;
+  &lt;/TR&gt;
+  
+&lt;/TABLE&gt;
+&lt;B&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;More than you expect&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;/B&gt;
+
+&lt;HR&gt;&lt;BR&gt;
+&lt;b&gt;Würth Elektronik eiSos GmbH &amp; Co. KG&lt;/b&gt;&lt;br&gt;
+EMC &amp; Inductive Solutions&lt;br&gt;
+
+Max-Eyth-Str.1&lt;br&gt;
+D-74638 Waldenburg&lt;br&gt;
+&lt;br&gt;
+Tel: +49 (0)7942-945-0&lt;br&gt;
+Fax:+49 (0)7942-945-405&lt;br&gt;
+&lt;br&gt;
+&lt;a href="http://www.we-online.com/eagle"&gt;http://www.we-online.com/eagle&lt;/a&gt;&lt;br&gt;
+&lt;a href="mailto:libraries@we-online.com"&gt;libraries@we-online.com&lt;/a&gt; &lt;BR&gt;&lt;BR&gt;
+&lt;br&gt;&lt;HR&gt;&lt;BR&gt;
+Neither CadSoft nor WE-eiSos does warrant that this library is error-free or &lt;br&gt;
+that it meets your specific requirements.&lt;br&gt;&lt;BR&gt;
+Please contact us for more information.&lt;br&gt;&lt;BR&gt;&lt;br&gt;
+&lt;hr&gt;
+Eagle Version 6, Library Revision 2015b, 08.04.2015&lt;br&gt;
+&lt;HR&gt;
+Copyright: Würth Elektronik</description>
+<packages>
+<package name="3528-COMMON-ANODE">
+<wire x1="-2.6" y1="1.6" x2="2.6" y2="1.6" width="0.127" layer="39"/>
+<wire x1="2.6" y1="1.6" x2="2.6" y2="-1.6" width="0.127" layer="39"/>
+<wire x1="2.6" y1="-1.6" x2="-2.6" y2="-1.6" width="0.127" layer="39"/>
+<wire x1="-2.6" y1="-1.6" x2="-2.6" y2="1.6" width="0.127" layer="39"/>
+<wire x1="-1.75" y1="1.4" x2="1.75" y2="1.4" width="0.127" layer="51"/>
+<wire x1="1.75" y1="1.4" x2="1.75" y2="-1.4" width="0.127" layer="51"/>
+<wire x1="1.75" y1="-1.4" x2="-1.75" y2="-1.4" width="0.127" layer="51"/>
+<wire x1="-1.75" y1="-1.4" x2="-1.75" y2="1.4" width="0.127" layer="51"/>
+<smd name="3" x="-1.55" y="0.85" dx="1.5" dy="0.9" layer="1" rot="R180"/>
+<smd name="1" x="1.55" y="0.85" dx="1.5" dy="0.9" layer="1" rot="R180"/>
+<smd name="2" x="1.55" y="-0.85" dx="1.5" dy="0.9" layer="1" rot="R180"/>
+<smd name="4" x="-1.55" y="-0.85" dx="1.5" dy="0.9" layer="1" rot="R180"/>
+<text x="-2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-3.6" y="0.5" size="0.8128" layer="21">C</text>
+<text x="-3.6" y="-1.3" size="0.8128" layer="21">C</text>
+<text x="2.9" y="-1.4" size="0.8128" layer="21">C</text>
+<text x="2.9" y="0.4" size="0.8128" layer="21">A</text>
+<wire x1="-0.79375" y1="1.5875" x2="-0.8" y2="0.3" width="0.127" layer="43"/>
+<wire x1="-0.8" y1="0.3" x2="-2.6" y2="0.3" width="0.127" layer="43"/>
+<wire x1="-2.6" y1="0.3" x2="-2.6" y2="-0.3" width="0.127" layer="43"/>
+<wire x1="-2.6" y1="-0.3" x2="-0.8" y2="-0.3" width="0.127" layer="43"/>
+<wire x1="-0.8" y1="-0.3" x2="-0.79375" y2="-1.5875" width="0.127" layer="43"/>
+<wire x1="-0.79375" y1="-1.5875" x2="0.79375" y2="-1.5875" width="0.127" layer="43"/>
+<wire x1="0.79375" y1="-1.5875" x2="0.8" y2="-0.3" width="0.127" layer="43"/>
+<wire x1="0.8" y1="-0.3" x2="2.6" y2="-0.3" width="0.127" layer="43"/>
+<wire x1="2.6" y1="-0.3" x2="2.6" y2="0.3" width="0.127" layer="43"/>
+<wire x1="2.6" y1="0.3" x2="0.8" y2="0.3" width="0.127" layer="43"/>
+<wire x1="0.8" y1="0.3" x2="0.79375" y2="1.5875" width="0.127" layer="43"/>
+<wire x1="0.79375" y1="1.5875" x2="-0.79375" y2="1.5875" width="0.127" layer="43"/>
+<wire x1="-1.75" y1="1.4" x2="1.75" y2="1.4" width="0.127" layer="21"/>
+<wire x1="-1.75" y1="-1.4" x2="1.75" y2="-1.4" width="0.127" layer="21"/>
+<wire x1="-1.75" y1="0.3" x2="-1.75" y2="-0.3" width="0.127" layer="21"/>
+<wire x1="1.75" y1="0.3" x2="1.75" y2="-0.3" width="0.127" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="WL-SBTW">
+<description>3 LED with common Anode</description>
+<wire x1="4.23" y1="-9" x2="5.73" y2="-9" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="-2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-7.62" x2="-2.54" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-10.16" x2="2.54" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-7.62" x2="-2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="10.16" x2="-2.54" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="7.62" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="5.08" x2="2.54" y2="7.62" width="0.254" layer="94"/>
+<wire x1="2.54" y1="7.62" x2="-2.54" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="7.62" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="7.62" x2="-7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="0" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="-2.54" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-7.62" x2="2.54" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="7.62" x2="2.54" y2="7.62" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-5.08" x2="2.54" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="2.54" y1="10.16" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="4.23" y1="-1.4" x2="5.73" y2="-1.4" width="0.254" layer="94"/>
+<wire x1="4.33" y1="6.4" x2="5.83" y2="6.4" width="0.254" layer="94"/>
+<wire x1="-12.38" y1="-2.87" x2="-10.88" y2="-2.87" width="0.254" layer="94"/>
+<wire x1="-11.61" y1="-3.64" x2="-11.61" y2="-2.14" width="0.254" layer="94"/>
+<text x="-3.69" y="11.842" size="1.27" layer="95">&gt;NAME</text>
+<text x="-3.69" y="-13.968" size="1.27" layer="96">&gt;VALUE</text>
+<text x="0.6" y="4.9" size="1.27" layer="94">G</text>
+<text x="0.7" y="-3" size="1.27" layer="94">R</text>
+<text x="0.8" y="-10.5" size="1.27" layer="94">B</text>
+<pin name="A" x="-10.16" y="0" length="short"/>
+<pin name="BC" x="5.08" y="-7.62" length="short" rot="R180"/>
+<pin name="RC" x="5.08" y="0" length="short" rot="R180"/>
+<pin name="GC" x="5.08" y="7.62" length="short" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="WL-SFTW" prefix="D">
+<description>&lt;b&gt;SMD full-color TOP LED
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;b&gt; Characteristics
+&lt;br&gt;
+&lt;br&gt;&lt;/b&gt;&lt;/b&gt; Low energy consumption
+&lt;br&gt; High reliability
+&lt;br&gt; Low current requirement
+&lt;br&gt; Fast switching
+&lt;br&gt; No UV/IR radiation
+&lt;br&gt; High brightness
+&lt;br&gt; RGB individual control
+&lt;br&gt; Compact package outline
+&lt;br&gt; Black surface
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;b&gt; Applications
+&lt;br&gt;
+&lt;br&gt;&lt;/b&gt; Flash light
+&lt;br&gt; Switch indicators
+&lt;br&gt; Equipments indicators
+&lt;br&gt; Accent and decorative lighting
+&lt;br&gt; Electronic signage
+&lt;br&gt; Video displays
+&lt;br&gt; Backlight for LCDs, PDAs and TVs
+&lt;br&gt; Oven, microwave
+&lt;br&gt; Street lighting
+&lt;br&gt; Ideal for lateral coupling in light guides
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;a href="http://katalog.we-online.de/media/images/eipal/WL-SFTW_pf2.jpg" title="Enlarge picture"&gt;
+&lt;img src="http://katalog.we-online.de/media/thumbs2/eipal/thb_WL-SFTW_pf2.jpg" width="320"&gt;&lt;/a&gt;&lt;p&gt;
+Details see: &lt;a href="http://katalog.we-online.de/en/led/WL-SFTW?m"&gt;http://katalog.we-online.de/en/led/WL-SFTW?m&lt;/a&gt;&lt;p&gt;
+
+&lt;/b&gt;Updated   2015-04-10&lt;br&gt;
+&lt;/b&gt;2015 (C) Wurth Elektronik</description>
+<gates>
+<gate name="G$1" symbol="WL-SBTW" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-150141M173100-R&amp;G&amp;B" package="3528-COMMON-ANODE">
+<connects>
+<connect gate="G$1" pin="A" pad="1"/>
+<connect gate="G$1" pin="BC" pad="2"/>
+<connect gate="G$1" pin="GC" pad="4"/>
+<connect gate="G$1" pin="RC" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -14987,7 +15093,6 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <part name="P+9" library="supply1" deviceset="+5V" device=""/>
 <part name="C2" library="rcl" deviceset="C-EU" device="C0805K" value="100nF"/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
-<part name="LED" library="led" deviceset="GM5WA94310A" device="" value=""/>
 <part name="T1" library="transistor" deviceset="*-NPN-" device="SOT23-BEC" technology="BC818-16"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="P+10" library="supply1" deviceset="+24V" device=""/>
@@ -15007,12 +15112,15 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 <part name="SV1" library="con-amp-mt6" deviceset="MT6-3" device=""/>
-<part name="R11" library="SparkFun" deviceset="RESISTOR" device="" value="10K\"/>
-<part name="GND17" library="supply1" deviceset="GND" device=""/>
+<part name="R11" library="SparkFun" deviceset="RESISTOR" device="" value="125"/>
 <part name="DISPLAYCONNECTOR" library="con-amp-quick" deviceset="M04" device=""/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="L1" library="inductor-coilcraft" deviceset="MSS1260" device="" value="68uH"/>
+<part name="LED" library="Wuerth_Elektronik_LEDs_rev15b" deviceset="WL-SFTW" device="-150141M173100-R&amp;G&amp;B"/>
+<part name="P+14" library="supply1" deviceset="+5V" device=""/>
+<part name="R12" library="SparkFun" deviceset="RESISTOR" device="" value="230"/>
+<part name="R13" library="SparkFun" deviceset="RESISTOR" device="" value="90"/>
 </parts>
 <sheets>
 <sheet>
@@ -15077,9 +15185,6 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <instance part="P+9" gate="1" x="271.78" y="17.78" rot="R90"/>
 <instance part="C2" gate="G$1" x="279.4" y="15.24"/>
 <instance part="GND11" gate="1" x="279.4" y="5.08"/>
-<instance part="LED" gate="R" x="101.6" y="99.06" rot="R180"/>
-<instance part="LED" gate="G" x="88.9" y="99.06" rot="R180"/>
-<instance part="LED" gate="B" x="76.2" y="99.06" rot="R180"/>
 <instance part="T1" gate="G$1" x="226.06" y="27.94"/>
 <instance part="GND12" gate="1" x="228.6" y="10.16"/>
 <instance part="P+10" gate="1" x="228.6" y="53.34"/>
@@ -15101,12 +15206,18 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <instance part="SV1" gate="-1" x="154.94" y="-12.7" rot="R270"/>
 <instance part="SV1" gate="-2" x="149.86" y="-12.7" rot="R270"/>
 <instance part="SV1" gate="-3" x="144.78" y="-12.7" rot="R270"/>
-<instance part="R11" gate="G$1" x="81.28" y="111.76" rot="R180"/>
-<instance part="GND17" gate="1" x="93.98" y="111.76" rot="R90"/>
+<instance part="R11" gate="G$1" x="78.74" y="93.98" rot="R270"/>
 <instance part="DISPLAYCONNECTOR" gate="G$1" x="195.58" y="-15.24" rot="R270"/>
 <instance part="GND18" gate="1" x="203.2" y="93.98" rot="R90"/>
 <instance part="GND19" gate="1" x="203.2" y="86.36" rot="R90"/>
 <instance part="L1" gate="G$1" x="73.66" y="-27.94" rot="R90"/>
+<instance part="LED" gate="G$1" x="86.36" y="106.68" smashed="yes" rot="R270">
+<attribute name="NAME" x="98.202" y="110.37" size="1.27" layer="95" rot="R270"/>
+<attribute name="VALUE" x="90.29" y="118.112" size="1.27" layer="96"/>
+</instance>
+<instance part="P+14" gate="1" x="86.36" y="124.46"/>
+<instance part="R12" gate="G$1" x="86.36" y="93.98" rot="R270"/>
+<instance part="R13" gate="G$1" x="93.98" y="93.98" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -15175,6 +15286,11 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <pinref part="DISPLAYCONNECTOR" gate="G$1" pin="1"/>
 <wire x1="193.04" y1="-20.32" x2="193.04" y2="-25.4" width="0.1524" layer="91"/>
 <label x="193.04" y="-25.4" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="LED" gate="G$1" pin="A"/>
+<pinref part="P+14" gate="1" pin="+5V"/>
+<wire x1="86.36" y1="116.84" x2="86.36" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -15295,11 +15411,6 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <pinref part="SV1" gate="-2" pin="S"/>
 <wire x1="149.86" y1="-17.78" x2="149.86" y2="-25.4" width="0.1524" layer="91"/>
 <label x="149.86" y="-27.94" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="R11" gate="G$1" pin="1"/>
-<pinref part="GND17" gate="1" pin="GND"/>
-<wire x1="91.44" y1="111.76" x2="86.36" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="DISPLAYCONNECTOR" gate="G$1" pin="2"/>
@@ -15675,57 +15786,40 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <label x="109.22" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$11" class="0">
-<segment>
-<pinref part="LED" gate="B" pin="C"/>
-<pinref part="R11" gate="G$1" pin="2"/>
-<wire x1="76.2" y1="104.14" x2="76.2" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="LED" gate="G" pin="C"/>
-<wire x1="76.2" y1="106.68" x2="76.2" y2="111.76" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="104.14" x2="88.9" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="106.68" x2="76.2" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="106.68" x2="101.6" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="LED" gate="R" pin="C"/>
-<wire x1="101.6" y1="106.68" x2="101.6" y2="104.14" width="0.1524" layer="91"/>
-<junction x="76.2" y="106.68"/>
-<junction x="88.9" y="106.68"/>
-<junction x="101.6" y="106.68"/>
-</segment>
-</net>
 <net name="A0" class="0">
-<segment>
-<pinref part="LED" gate="B" pin="A"/>
-<wire x1="76.2" y1="96.52" x2="76.2" y2="88.9" width="0.1524" layer="91"/>
-<label x="76.2" y="83.82" size="1.778" layer="95"/>
-</segment>
 <segment>
 <wire x1="129.54" y1="53.34" x2="119.38" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="ANALOG" gate="A" pin="1"/>
 <pinref part="J6" gate="A" pin="1"/>
 </segment>
+<segment>
+<pinref part="R11" gate="G$1" pin="2"/>
+<wire x1="78.74" y1="88.9" x2="78.74" y2="86.36" width="0.1524" layer="91"/>
+<label x="78.74" y="86.36" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="A1" class="0">
-<segment>
-<pinref part="LED" gate="R" pin="A"/>
-<wire x1="101.6" y1="96.52" x2="101.6" y2="88.9" width="0.1524" layer="91"/>
-<label x="101.6" y="83.82" size="1.778" layer="95"/>
-</segment>
 <segment>
 <wire x1="129.54" y1="50.8" x2="119.38" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="ANALOG" gate="A" pin="2"/>
 <pinref part="J6" gate="A" pin="2"/>
 </segment>
+<segment>
+<pinref part="R13" gate="G$1" pin="2"/>
+<wire x1="93.98" y1="88.9" x2="93.98" y2="86.36" width="0.1524" layer="91"/>
+<label x="93.98" y="86.36" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="A2" class="0">
-<segment>
-<pinref part="LED" gate="G" pin="A"/>
-<wire x1="88.9" y1="96.52" x2="88.9" y2="88.9" width="0.1524" layer="91"/>
-<label x="88.9" y="83.82" size="1.778" layer="95"/>
-</segment>
 <segment>
 <wire x1="129.54" y1="48.26" x2="119.38" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="ANALOG" gate="A" pin="3"/>
 <pinref part="J6" gate="A" pin="3"/>
+</segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="2"/>
+<wire x1="86.36" y1="88.9" x2="86.36" y2="86.36" width="0.1524" layer="91"/>
+<label x="86.36" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PIN0" class="0">
@@ -15788,6 +15882,27 @@ Modified: by Eugene Sadovoi evgeni@eniks.com&lt;/author&gt;</description>
 <pinref part="ANALOG" gate="A" pin="4"/>
 <pinref part="J6" gate="A" pin="4"/>
 <label x="134.62" y="45.72" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="R11" gate="G$1" pin="1"/>
+<pinref part="LED" gate="G$1" pin="BC"/>
+<wire x1="78.74" y1="99.06" x2="78.74" y2="101.6" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="R12" gate="G$1" pin="1"/>
+<pinref part="LED" gate="G$1" pin="RC"/>
+<wire x1="86.36" y1="99.06" x2="86.36" y2="101.6" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="R13" gate="G$1" pin="1"/>
+<pinref part="LED" gate="G$1" pin="GC"/>
+<wire x1="93.98" y1="99.06" x2="93.98" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
