@@ -33,7 +33,7 @@ void u8g_setup(void);
 void draw(void);
 void Set_Input(int16_t inputValue);
 u8g_t u8g;
-int16_t num = -500;
+
 char buf[80];
 static uint8_t SOLLtemperature = 22;
 static int16_t inputValue;
@@ -55,14 +55,13 @@ int main(void)
     initScheduler();
     clearDisplay(0,4);
     showTime();
-	int T;
 	// add tasks, id is arbitrary
 	// task1 runs every 800ms second
 	addTask(1,ButtonAction, 8);
-	// task2 runs every 1 seconds
+	// task2 runs every 700ms seconds
 	addTask(2,updateSollTemperature,7);
-	// task3 runs every 2 seconds
-	addTask(3, PIDController, 20);
+	// task3 runs every 1 seconds
+	addTask(3, PIDController, 10);
 	// task4 runs every 4 seconds
 	addTask(4, displayController, 40);
 	//task5
@@ -71,6 +70,7 @@ int main(void)
 	addTask(6,autoProgram,600);
 	//send command to relay
 	addTask(7, commandToRelay,400);
+	addTask(7, showActualTemperature,10);
 	//enable interrupts
 	sei();
   while(1)
@@ -176,7 +176,7 @@ void displayController() {
 	count++;
 	switch(count) {
 	case 2:
-		showActualTemperature();
+		//showActualTemperature();
 		break;
 	case 1:
 		showTime();
@@ -211,4 +211,10 @@ void draw(void)
   u8g_DrawStr(&u8g, 0,60,buf);
   sprintf(buf,"Relay= %d",stateOfHeatingSystem);
   u8g_DrawStr(&u8g, 65,10,buf);
+  sprintf(buf,"Day= %d",GetDoW());
+  u8g_DrawStr(&u8g, 65,20,buf);
+  sprintf(buf,"Tem/re= %d",roundf(actualTemperature()));
+  u8g_DrawStr(&u8g, 65,30,buf);
+  sprintf(buf,"Soll/Te= %d",SOLLtemperature);
+    u8g_DrawStr(&u8g, 61,40,buf);
 }

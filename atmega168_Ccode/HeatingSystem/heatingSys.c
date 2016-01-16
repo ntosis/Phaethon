@@ -1,4 +1,5 @@
 #include "heatingSys.h"
+#include "pid.h"
 
 bool autoProgramSelected=false;
 bool manualProgramSelected=false;
