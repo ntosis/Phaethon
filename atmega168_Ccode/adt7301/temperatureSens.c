@@ -21,8 +21,6 @@ float actualTemperature() {
 
     spi_transfer_sync (SensorData,SensorData,2);
 
-    //MSB =  SPI.transfer(0x00);
-    //LSB =  SPI.transfer(0x00);
     _delay_us(10);
     __HIGH(Sensor_SS);
 
