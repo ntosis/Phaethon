@@ -9,17 +9,6 @@
 #include "heatingSys.h"
 #include "u8g.h"
 //#include "pinmacros.h"
-/*! \brief P, I and D parameter values
-*
-* The K_P, K_I and K_D values (P, I and D gains)
-* need to be modified to adapt to the application at hand
-*/
-//! \xrefitem todo "Todo" "Todo list"
-#define K_P     10
-//! \xrefitem todo "Todo" "Todo list"
-#define K_I     0.5
-//! \xrefitem todo "Todo" "Todo list"
-#define K_D     2
 
 void updateSollTemperature();
 void showActualTemperature(void);
@@ -31,7 +20,10 @@ uint8_t Get_Reference(void);
 uint8_t Get_Measurement(void);
 void u8g_setup(void);
 void draw(void);
+void drawTime(void);
 void Set_Input(int16_t inputValue);
+void showDebugInfo(void);
+void showTimeNow(void);
 u8g_t u8g;
 
 char buf[80];
@@ -44,11 +36,11 @@ int main(void)
 	__OUTPUT(FAST_RED_LED);
 
 	//__HIGH(FAST_RED_LED);
-	_delay_ms(500);
-	  u8g_setup();
+	_delay_ms(20);
 	TM1637DisplayInit();
 	initTempSens();
 	initRtrEncoder();
+	u8g_setup();
 	timerInit();
 	pid_Init(K_P*SCALING_FACTOR,K_I*SCALING_FACTOR,K_D*SCALING_FACTOR,&pidData);
 	// set up the task list
@@ -62,8 +54,8 @@ int main(void)
 	addTask(2,updateSollTemperature,7);
 	// task3 runs every 1 seconds
 	addTask(3, PIDController, 10);
-	// task4 runs every 4 seconds
-	addTask(4, displayController, 40);
+	// task4 runs every 1.5 seconds
+	addTask(4, displayController, 15);
 	//task5
 	addTask(5, LEDfunction, 5);
 	//task 6 autoProgram runs every a min
@@ -82,7 +74,7 @@ int main(void)
 }
 void updateSollTemperature() {
 
-	 if (TurnDetected) {
+	 if (TurnDetected&&onStateofProgram) {
   if (up)
       SOLLtemperature--;
     else
@@ -99,11 +91,6 @@ void showActualTemperature(void) {
 	clearDisplay(0,4);
 	int T = roundf(actualTemperature());
 	showNumberDec(T, false, 2,2);
-	u8g_FirstPage(&u8g);
-	    do
-	    {
-	      draw();
-	    } while ( u8g_NextPage(&u8g) );
 }
 void ButtonAction(void) {
 	checkStruct();
@@ -172,27 +159,23 @@ void commandToRelay() {
 	}
 }
 void displayController() {
-	static count=0;
+	static uint8_t count=0;
 	count++;
 	switch(count) {
-	case 2:
-		//showActualTemperature();
-		break;
 	case 1:
-		showTime();
+		showDebugInfo();
 		break;
 	case 3:
-		flashAutoFunctionIfIsOn();
+		showTimeNow();
 		break;
 		}
-	if(count==3) count=0;
+	if(count==4) count=0;
 }
 
 void u8g_setup(void)
 {
-
-  u8g_InitI2C(&u8g, &u8g_dev_ssd1306_128x64_i2c, U8G_I2C_OPT_DEV_1);
-
+  _delay_ms(5);
+  u8g_InitI2C(&u8g, &u8g_dev_ssd1306_128x64_i2c, U8G_I2C_OPT_DEV_0);
 }
 void draw(void)
 {
@@ -205,7 +188,7 @@ void draw(void)
   u8g_DrawStr(&u8g, 0,30,buf);
   sprintf(buf,"TmEnb= %d",autoProgramTimeEnabled);
   u8g_DrawStr(&u8g, 0,40,buf);
-  sprintf(buf,"Time= %d:%d",GetHH(),GetMM());
+  sprintf(buf,"Time= %d:%02d",GetHH(),GetMM());
   u8g_DrawStr(&u8g, 0,50,buf);
   sprintf(buf,"PID= %d",inputValue);
   u8g_DrawStr(&u8g, 0,60,buf);
@@ -213,8 +196,29 @@ void draw(void)
   u8g_DrawStr(&u8g, 65,10,buf);
   sprintf(buf,"Day= %d",GetDoW());
   u8g_DrawStr(&u8g, 65,20,buf);
-  sprintf(buf,"Tem/re= %d",roundf(actualTemperature()));
+  int T = roundf(actualTemperature());
+  sprintf(buf,"Tem/re= %d",T);
   u8g_DrawStr(&u8g, 65,30,buf);
   sprintf(buf,"Soll/Te= %d",SOLLtemperature);
     u8g_DrawStr(&u8g, 61,40,buf);
+}
+void showDebugInfo(void) {
+	u8g_FirstPage(&u8g);
+		    do
+		    {
+		      draw();
+		    } while ( u8g_NextPage(&u8g) );
+}
+void showTimeNow(void) {
+	u8g_FirstPage(&u8g);
+			    do
+			    {
+			      drawTime();
+			    } while ( u8g_NextPage(&u8g) );
+}
+void drawTime(void){
+	u8g_SetFont(&u8g,u8g_font_fub35n);
+
+	u8g_DrawStr(&u8g, 0,50,buf);
+	sprintf(buf,"%d:%02d",GetHH(),GetMM());
 }
