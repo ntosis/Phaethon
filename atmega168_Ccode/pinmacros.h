@@ -22,4 +22,5 @@ typedef enum { false, true } bool;
 #define GREEN_LED C,2
 #define BLUE_LED C,0
 #define RELAY_PIN D,6
+#define PIN0 D,0
 #endif
