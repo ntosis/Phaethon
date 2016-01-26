@@ -4,9 +4,10 @@
 #include "pinmacros.h"
 #include <avr/interrupt.h>
 #include "timerInterrupt.h"
-#define PinCLK D,2                   // Used for generating interrupts using CLK signal
-#define PinDT D,4                    // Used for reading DT signal
-#define PinSW D,3
+/*
+ * The ports for the pins are defined in pinmacros.h
+ * The PD2 PD3 PD 4 are used for the rotary encoder
+ */
 void initRtrEncoder();
 void attacheInterrupt();
 void checkStruct();

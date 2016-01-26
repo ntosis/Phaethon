@@ -200,7 +200,7 @@ void draw(void)
   sprintf(buf,"Tem/re= %d",T);
   u8g_DrawStr(&u8g, 65,30,buf);
   sprintf(buf,"Soll/Te= %d",SOLLtemperature);
-    u8g_DrawStr(&u8g, 61,40,buf);
+  u8g_DrawStr(&u8g, 61,40,buf);
 }
 void showDebugInfo(void) {
 	u8g_FirstPage(&u8g);

@@ -22,5 +22,16 @@ typedef enum { false, true } bool;
 #define GREEN_LED C,2
 #define BLUE_LED C,0
 #define RELAY_PIN D,6
-#define PIN0 D,0
+//SPI Port definitions
+#define PORT_SPI    PORTB
+#define DDR_SPI     DDRB
+#define DD_MISO     DDB4  // PIN 12 at Arduino UNO/Duemilanove
+#define DD_MOSI     DDB3  // PIN 11 at Arduino UNO/Duemilanove
+#define DD_SCK      DDB5  // PIN 13 at Arduino UNO/Duemilanove
+#define SSPin B,2         // PIN 10 at Arduino UNO/Duemilanove
+
+// Rotary encoder pins
+#define PinCLK D,2        // Used for generating interrupts using CLK signal, PIN 2 at Arduino UNO/Duemilanove
+#define PinDT D,4         // Used for reading DT signal, PIN 4 at Arduino UNO/Duemilanove
+#define PinSW D,3 		  // Used for generating interrupts when the button is pressed,PIN 3 at Arduino UNO/Duemilanove
 #endif
