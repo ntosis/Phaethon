@@ -28,9 +28,9 @@
 * need to be modified to adapt to the application at hand
 */
 //! \xrefitem todo "Todo" "Todo list"
-float K_P = 10;
+float K_P = 4;
 //! \xrefitem todo "Todo" "Todo list"
-float K_I= 0.5;
+float K_I= 0.7;
 //! \xrefitem todo "Todo" "Todo list"
 float K_D = 2;
 /*! \brief Initialisation of PID controller parameters.

@@ -24,9 +24,9 @@ void drawTime(void);
 void Set_Input(int16_t inputValue);
 void showDebugInfo(void);
 void showTimeNow(void);
-u8g_t u8g;
+extern u8g_t u8g;
 
-char buf[80];
+static char buf[80];
 static uint8_t SOLLtemperature = 22;
 static int16_t inputValue;
 struct PID_DATA pidData;
@@ -34,35 +34,35 @@ int main(void)
 {
 	int set;
 	__OUTPUT(FAST_RED_LED);
-
+	__OUTPUT(LED13); //DEBUG line to be deleted
 	//__HIGH(FAST_RED_LED);
 	_delay_ms(20);
-	TM1637DisplayInit();
-	initTempSens();
+	//TM1637DisplayInit();
+	//initTempSens();
 	initRtrEncoder();
 	u8g_setup();
 	timerInit();
-	pid_Init(K_P*SCALING_FACTOR,K_I*SCALING_FACTOR,K_D*SCALING_FACTOR,&pidData);
+	//pid_Init(K_P*SCALING_FACTOR,K_I*SCALING_FACTOR,K_D*SCALING_FACTOR,&pidData);
 	// set up the task list
     initScheduler();
-    clearDisplay(0,4);
-    showTime();
+    //clearDisplay(0,4);
+    //showTime();
 	// add tasks, id is arbitrary
 	// task1 runs every 800ms second
 	addTask(1,ButtonAction, 8);
 	// task2 runs every 700ms seconds
 	addTask(2,updateSollTemperature,7);
 	// task3 runs every 1 seconds
-	addTask(3, PIDController, 10);
+	//addTask(3, PIDController, 10);
 	// task4 runs every 1.5 seconds
 	addTask(4, displayController, 15);
 	//task5
-	addTask(5, LEDfunction, 5);
+	//addTask(5, LEDfunction, 5);
 	//task 6 autoProgram runs every a min
-	addTask(6,autoProgram,600);
+	//addTask(6,autoProgram,600);
 	//send command to relay
-	addTask(7, commandToRelay,400);
-	addTask(7, showActualTemperature,10);
+	//addTask(7, commandToRelay,400);
+	//addTask(7, showActualTemperature,10);
 	//enable interrupts
 	sei();
   while(1)
@@ -163,7 +163,7 @@ void displayController() {
 	count++;
 	switch(count) {
 	case 1:
-		showDebugInfo();
+		//showDebugInfo();
 		break;
 	case 3:
 		showTimeNow();
@@ -175,7 +175,7 @@ void displayController() {
 void u8g_setup(void)
 {
   _delay_ms(5);
-  u8g_InitI2C(&u8g, &u8g_dev_ssd1306_128x64_i2c, U8G_I2C_OPT_DEV_0);
+  u8g_InitI2C(&u8g, &u8g_dev_ssd1306_128x64_i2c, U8G_I2C_OPT_FAST);
 }
 void draw(void)
 {

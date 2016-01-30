@@ -3,11 +3,14 @@
 //      2. Define RTC Connections in i2c.h
 #include "ds1307.h"
 #include <avr/io.h>
-#include "i2c.h"
-#define ds1307_adr 0B11010000
+
 char buff[8];
 char mystr[8];
 int temp;
+u8g_t u8g;
+bool up;
+bool TurnDetected;
+
 #define I2C_START 0
 #define I2C_DATA  1
 #define I2C_STOP  2
@@ -27,28 +30,6 @@ int Write_RTC(char add,char data1)
 return 0;
 }
 
-//=======================================================================
-//                           SET TIME
-//=======================================================================
-void SetTime(char HH,char MM, char SS, char ampm)
-{
-	sprintf(mystr,"%03d",SS);
-	Write_RTC(0x00,((mystr[1] - 0x30) << 4) | (mystr[2] - 0x30));
-
-	sprintf(mystr,"%03d",MM);
-	Write_RTC(0x01,((mystr[1] - 0x30) << 4) | (mystr[2] - 0x30));
-
-
-	sprintf(mystr,"%03d",HH);
-	if(ampm == 1)
-	{
-		Write_RTC(0x02,((((mystr[1] - 0x30) << 4) | (mystr[2] - 0x30)) | 0x40) | 0x20);
-    }
-	else
-	{
-		Write_RTC(0x02,((((mystr[1] - 0x30) << 4) | (mystr[2] - 0x30)) | 0x40));
-	}
-}
 //=======================================================================
 int GetHH()
 {
@@ -106,9 +87,16 @@ int GetYY()
 	return bcd2dec(Read_RTC(0x06));
 }
 // Convert Binary Coded Decimal (BCD) to Decimal
+
 uint8_t bcd2dec(uint8_t num)
 {
   return ((num/16 * 10) + (num % 16));
+}
+// Convert Decimal to Binary Coded Decimal (BCD)
+
+uint8_t dec2bcd(uint8_t num)
+{
+return ((num/10 * 16) + (num % 10));
 }
 //=======================================================================
 //                    Display Date and Time
@@ -143,4 +131,127 @@ void showTime() {
 else {
 	showNumberDec(GetMM(), false, 2,2);
 	}
+}
+/*
+ * SET TIME LOOP
+ * */
+void setTimeLoop(void) {
+	__HIGH(LED13);
+	uint8_t tempValue = TCCR1B;//Disable the time interrupt to freeze the task manager
+
+	TCCR1B=0x00; // Stop the timer
+
+	signalButton = 0; // Reset the signal, which is coming from external INT1
+
+	do {
+
+		u8g_FirstPage(&u8g);
+				do{
+
+			 _draw(0);
+
+				} while ( u8g_NextPage(&u8g) );
+
+		if (TurnDetected) {
+
+			if (up)
+			      hour--;
+			    else
+			      hour++;
+			     if(hour<0) hour = 23;
+			    if(hour>23) hour = 0;
+			 }
+	TurnDetected = false;    // do NOT repeat IF loop until new rotation detected
+
+	_delay_ms(400);
+
+	}while(signalButton<2);
+
+	// ***************  Second step for minute
+
+	signalButton = 0; // Reset the signal, which is coming from external INT1
+
+	do {
+
+		u8g_FirstPage(&u8g);
+				do{
+
+			 _draw(1);
+
+				} while ( u8g_NextPage(&u8g) );
+
+		if (TurnDetected) {
+
+			if (up)
+			      minute--;
+			    else
+			      minute++;
+			     if(minute<0) minute = 59;
+			    if(minute>59) minute = 0;
+			 }
+	TurnDetected = false;    // do NOT repeat IF loop until new rotation detected
+
+	_delay_ms(400);
+
+	}while(signalButton<1);
+
+	// ***************  third step for day
+
+		signalButton = 0; // Reset the signal, which is coming from external INT1
+
+		do {
+
+			u8g_FirstPage(&u8g);
+					do{
+
+				 _draw(2);
+
+					} while ( u8g_NextPage(&u8g) );
+
+			if (TurnDetected) {
+
+				if (up)
+				      day--;
+				    else
+				      day++;
+				     if(day<1) day=7;
+				    if(day>7) day=1;
+				 }
+		TurnDetected = false;    // do NOT repeat IF loop until new rotation detected
+
+		_delay_ms(400);
+
+		}while(signalButton<1);
+
+	// inline function to write the time to ds1307
+
+		SetTime(hour,minute,day);
+
+	__LOW(LED13);
+
+	TCCR1B = tempValue; //Restore the timer.
+
+	return;
+}
+void _draw(uint8_t idx)
+{
+	if(idx==0) {
+
+			sprintf(buf,"Set hour = %02d",hour);
+
+	}
+	else if(idx==1) {
+
+		    sprintf(buf,"Set minute = %02d",minute);
+
+	}
+	else if(idx==2) {
+			if(day>7) return; // Boundary error check
+			sprintf(buf,"Set day = %s",daysInWords[day-1]);
+
+		}
+
+  u8g_SetFont(&u8g, u8g_font_6x10);
+  u8g_DrawStr(&u8g, 0, 10,buf);
+
 }

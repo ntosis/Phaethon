@@ -3,7 +3,10 @@
 #include "heatingSys.h"
 
 bool onStateofProgram=false;
-
+uint8_t holdCnt=0;
+extern volatile uint8_t signalButton = 0;
+extern volatile bool up = false;
+extern volatile bool TurnDetected = false;
 void initRtrEncoder() {
 
 	__INPUT(PinCLK);
@@ -17,12 +20,6 @@ void initRtrEncoder() {
 
 }
 
-void attacheInterrupt() {
-
-	EICRA |= (1 << ISC01)|(1<<ISC11);    //  The falling edge of INT0 & INT1 generates an interrupt request
-	EIMSK |= (1 << INT0)|(1<<INT1);     // Turns on INT0 & INT1
-}
-
 ISR (INT0_vect)
 {
 	 if (__READ(PinCLK))
@@ -34,13 +31,12 @@ ISR (INT0_vect)
 
 ISR(INT1_vect) {
 
-    //Serial.println(millis());      // Using the word RESET instead of COUNT here to find out a buggy encoder
-
     (ArrayOfClicks+pnt)->timeOfClick=counter100MS;
     (ArrayOfClicks+pnt)->clicked=true;
      pnt++;
          //
     if(pnt==5) pnt=0;
+    if(signalButton<2)signalButton++;
 }
 void checkStruct() {
 
@@ -86,26 +82,29 @@ void checkStruct() {
    sei();
 }
 
-bool checkIfButtonIsPressed() {
+bool checkIfButtonIsPressed(void) {
 
   if(clicked)
   {
-   if(!onStateofProgram) {
-   onStateofProgram=true;
-   manualProgramSelected=true;
-   return true;
+	  if(!onStateofProgram) {
+		  	  onStateofProgram=true;
+		  	  manualProgramSelected=true;
+       return true;
       }
-   else {
-   onStateofProgram=false;
-   manualProgramSelected=false;
-   autoProgramSelected=false;
-   return false;
+	  else {
+		  	  onStateofProgram=false;
+		  	  manualProgramSelected=false;
+		  	  autoProgramSelected=false;
+       return false;
       }
    }
   else if(onStateofProgram&&dualclicked) {
 	  autoProgramSelected=(!autoProgramSelected);
 	  manualProgramSelected=(!manualProgramSelected);
   }
+
+checkHoldButton(); //inline function to check hold buton.
+
 }
 void setOnOffState(bool a) {
       // ON

@@ -34,4 +34,6 @@ typedef enum { false, true } bool;
 #define PinCLK D,2        // Used for generating interrupts using CLK signal, PIN 2 at Arduino UNO/Duemilanove
 #define PinDT D,4         // Used for reading DT signal, PIN 4 at Arduino UNO/Duemilanove
 #define PinSW D,3 		  // Used for generating interrupts when the button is pressed,PIN 3 at Arduino UNO/Duemilanove
+
+#define LED13 B,5 //DebugLed to be deleted this line
 #endif
