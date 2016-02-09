@@ -11,6 +11,7 @@
 
 extern volatile uint8_t signalButton;
 void inline SetTime(int8_t hh, int8_t mm, int8_t dd);
+void inline SetDate(uint8_t dd, uint8_t mo, uint8_t yy);
 uint8_t bcd2dec(uint8_t num);
 uint8_t dec2bcd(uint8_t num);
 uint8_t Read_RTC(char add);
@@ -21,7 +22,6 @@ int GetHH();
 int GetMM();
 int GetSS();
 int GetDoW();
-void SetDate(char DD,char MM, char YY);
 int GetDD();
 int GetMonth();
 int GetYY();
@@ -31,8 +31,11 @@ extern u8g_t u8g;
 static int8_t hour=0;
 static int8_t minute=0;
 static int8_t day=1;
-
+static uint8_t month=1;
+static uint8_t calendarDay=1;
+static uint16_t year=2016;
 static char *daysInWords[] = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+static char *monthsInWords[] = {"January","February","March","April","May","June","July","August","September","October","November","December"};
 
 void inline SetTime(int8_t hh, int8_t mm, int8_t dd){
 
@@ -45,6 +48,19 @@ void inline SetTime(int8_t hh, int8_t mm, int8_t dd){
 	//set the day
 	dd = dec2bcd((uint8_t)dd);
 	i2c_writeReg(ds1307_adr,0x03,&dd,1);
+
+}
+void inline SetDate(uint8_t dd, uint8_t mo, uint8_t yy){
+
+	//set the Hour
+	dd = dec2bcd(dd);
+	i2c_writeReg(ds1307_adr,0x04,&dd,1);
+	//set the minute
+	mo = dec2bcd(mo);
+	i2c_writeReg(ds1307_adr,0x05,&mo,1);
+	//set the day
+	yy = dec2bcd(yy-2000);
+	i2c_writeReg(ds1307_adr,0x06,&yy,1);
 
 }
 #endif

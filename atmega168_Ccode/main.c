@@ -217,8 +217,11 @@ void showTimeNow(void) {
 			    } while ( u8g_NextPage(&u8g) );
 }
 void drawTime(void){
-	u8g_SetFont(&u8g,u8g_font_fub35n);
+	u8g_SetFont(&u8g,u8g_font_fub17);
 
-	u8g_DrawStr(&u8g, 0,50,buf);
 	sprintf(buf,"%d:%02d",GetHH(),GetMM());
+	u8g_DrawStr(&u8g, 0,25,buf);
+	sprintf(buf,"%02d/%02d/%4d",GetDD(),GetMonth(),2000+GetYY());
+	u8g_DrawStr(&u8g, 0,60,buf);
+
 }
