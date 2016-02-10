@@ -3,8 +3,6 @@
 
 #include <avr/delay.h>
 #include "spi.h"
-//slave select
-#define Sensor_SS       D,5
 
 void initTempSens();
 float actualTemperature();

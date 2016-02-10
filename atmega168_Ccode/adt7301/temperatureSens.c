@@ -1,7 +1,6 @@
 #include "temperatureSens.h"
 
-//slave select
-#define Sensor_SS       D,5
+
 
 void initTempSens() {
 

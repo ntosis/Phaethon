@@ -18,7 +18,8 @@ typedef enum { false, true } bool;
 #define __LOW(pin)            _CLEAR(PORT,pin)
 #define __TOGGLE(pin)         _TOGGLE(PORT,pin)
 #define __READ(pin)           _GET(PIN,pin)
-#define FAST_RED_LED C,1
+
+#define RED_LED C,1
 #define GREEN_LED C,2
 #define BLUE_LED C,0
 #define RELAY_PIN D,6
@@ -29,11 +30,11 @@ typedef enum { false, true } bool;
 #define DD_MOSI     DDB3  // PIN 11 at Arduino UNO/Duemilanove
 #define DD_SCK      DDB5  // PIN 13 at Arduino UNO/Duemilanove
 #define SSPin B,2         // PIN 10 at Arduino UNO/Duemilanove
-
+//Temperature chip select pin
+#define Sensor_SS       D,5 // PIN 5 at Arduino UNO/Duemilanove
 // Rotary encoder pins
 #define PinCLK D,2        // Used for generating interrupts using CLK signal, PIN 2 at Arduino UNO/Duemilanove
 #define PinDT D,4         // Used for reading DT signal, PIN 4 at Arduino UNO/Duemilanove
 #define PinSW D,3 		  // Used for generating interrupts when the button is pressed,PIN 3 at Arduino UNO/Duemilanove
 
-#define LED13 B,5 //DebugLed to be deleted this line
 #endif
