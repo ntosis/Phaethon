@@ -28,17 +28,20 @@ int GetYY();
 static void _draw(uint8_t idx);
 static char buf[80];
 extern u8g_t u8g;
-static int8_t hour=0;
-static int8_t minute=0;
-static int8_t day=1;
-static uint8_t month=1;
-static uint8_t calendarDay=1;
+static int8_t hour;
+static int8_t minute;
+static int8_t day;
+static uint8_t month;
+static uint8_t calendarDay;
 static uint16_t year=2016;
 static char *daysInWords[] = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
 static char *monthsInWords[] = {"January","February","March","April","May","June","July","August","September","October","November","December"};
 
 void inline SetTime(int8_t hh, int8_t mm, int8_t dd){
 
+	//set Sec
+	uint8_t sec =0x00;
+	i2c_writeReg(ds1307_adr,0x00,&sec,1);
 	//set the Hour
 	hh = dec2bcd((uint8_t)hh);
 	i2c_writeReg(ds1307_adr,0x02,&hh,1);

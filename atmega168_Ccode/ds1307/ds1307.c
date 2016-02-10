@@ -123,11 +123,14 @@ else {
  * SET TIME LOOP
  * */
 void setTimeLoop(void) {
-	__HIGH(LED13);
 	uint8_t tempValue = TCCR1B;//Disable the time interrupt to freeze the task manager
 
 	TCCR1B=0x00; // Stop the timer
-
+	hour = GetHH();
+	minute = GetMM();
+	day = GetDoW();
+	month  = GetMonth() ;
+	calendarDay  = GetDD();
 	signalButton = 0; // Reset the signal, which is coming from external INT1
 
 	do {
@@ -298,7 +301,6 @@ void setTimeLoop(void) {
 
 		SetTime(hour,minute,day);
 		SetDate(calendarDay,month,year);
-	__LOW(LED13);
 
 	TCCR1B = tempValue; //Restore the timer.
 
