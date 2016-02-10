@@ -53,10 +53,10 @@ void setStateOfHeatingSystem(bool state) {
 
 void LEDfunction() {
 	if(!onStateofProgram) {
-		__HIGH(FAST_RED_LED);
+		__HIGH(RED_LED);
 	}
 	else {
-		__LOW(FAST_RED_LED);
+		__LOW(RED_LED);
 	}
 	if(manualProgramSelected&&(autoProgramSelected==0)) {
 		__HIGH(GREEN_LED);
