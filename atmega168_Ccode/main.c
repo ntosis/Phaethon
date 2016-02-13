@@ -34,7 +34,7 @@ int main(void)
 {
 	int set;
 	__OUTPUT(RED_LED);
-	//__HIGH(FAST_RED_LED);
+
 	_delay_ms(20);
 	//TM1637DisplayInit();
 	initTempSens();

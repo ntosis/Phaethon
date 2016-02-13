@@ -19,10 +19,10 @@ typedef enum { false, true } bool;
 #define __TOGGLE(pin)         _TOGGLE(PORT,pin)
 #define __READ(pin)           _GET(PIN,pin)
 
-#define RED_LED C,1
-#define GREEN_LED C,2
-#define BLUE_LED C,0
-#define RELAY_PIN D,6
+#define RED_LED C,1		  //PIN A1 at Arduino UNO/Duemilanove
+#define GREEN_LED C,2	  //PIN A2 at Arduino UNO/Duemilanove
+#define BLUE_LED C,0      //PIN A0 at Arduino UNO/Duemilanove
+#define RELAY_PIN D,6     //PIN 06 at Arduino UNO/Duemilanove
 //SPI Port definitions
 #define PORT_SPI    PORTB
 #define DDR_SPI     DDRB
@@ -36,5 +36,6 @@ typedef enum { false, true } bool;
 #define PinCLK D,2        // Used for generating interrupts using CLK signal, PIN 2 at Arduino UNO/Duemilanove
 #define PinDT D,4         // Used for reading DT signal, PIN 4 at Arduino UNO/Duemilanove
 #define PinSW D,3 		  // Used for generating interrupts when the button is pressed,PIN 3 at Arduino UNO/Duemilanove
-
+#define pinClk D,7		  // PIN 07 at Arduino UNO/Duemilanove
+#define pinDIO B,0		  // PIN 08 at Arduino UNO/Duemilanove
 #endif

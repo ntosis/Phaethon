@@ -19,10 +19,9 @@
 #include <string.h>
 #include <inttypes.h>
 #include <avr/delay.h>
-
+#include "pinmacros.h"
 #include "tm1637.h"
-#define pinClk D,7
-#define pinDIO B,0
+
 
 #define TM1637_I2C_COMM1    0x40
 #define TM1637_I2C_COMM2    0xC0
