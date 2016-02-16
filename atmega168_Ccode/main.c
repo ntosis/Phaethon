@@ -21,9 +21,11 @@ uint8_t Get_Measurement(void);
 void u8g_setup(void);
 void draw(void);
 void drawTime(void);
+void drawSollTemp(void);
 void Set_Input(int16_t inputValue);
 void showDebugInfo(void);
 void showTimeNow(void);
+void showSolltemp(void);
 extern u8g_t u8g;
 
 static char buf[80];
@@ -81,6 +83,7 @@ void updateSollTemperature() {
      if(SOLLtemperature<5) SOLLtemperature=5;
     if(SOLLtemperature>40) SOLLtemperature=40;
     clearDisplay(0,4);
+    showSolltemp();
     showNumberDec(SOLLtemperature, false, 2, 0);
  }
      TurnDetected = false;    // do NOT repeat IF loop until new rotation detected
@@ -178,6 +181,7 @@ void u8g_setup(void)
 }
 void draw(void)
 {
+
   sprintf(buf,"StOnOff= %d",onStateofProgram);
   u8g_SetFont(&u8g, u8g_font_6x10);
   u8g_DrawStr(&u8g, 0, 10,buf);
@@ -224,3 +228,18 @@ void drawTime(void){
 	u8g_DrawStr(&u8g, 0,60,buf);
 
 }
+
+void showSolltemp(void) {
+	u8g_FirstPage(&u8g);
+		do
+		    {
+		      drawSollTemp();
+		    } while ( u8g_NextPage(&u8g) );
+	}
+void drawSollTemp(void) {
+	 u8g_DrawCircle(&u8g, 64, 32, 17, U8G_DRAW_ALL);
+	 u8g_SetFont(&u8g,u8g_font_fub17);
+	 sprintf(buf,"%d",SOLLtemperature);
+	 u8g_DrawStr(&u8g,64-13,32+7,buf);
+}
+
