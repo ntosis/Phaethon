@@ -15037,6 +15037,99 @@ Details see: &lt;a href="http://katalog.we-online.de/en/led/WL-SFTW?m"&gt;http:/
 </deviceset>
 </devicesets>
 </library>
+<library name="rectifier">
+<description>&lt;b&gt;Rectifiers&lt;/b&gt;&lt;p&gt;
+General Instrument, Semikron, Diotec, Fagor&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SOIC-4">
+<description>&lt;b&gt;SOIC-4 Package&lt;/b&gt;&lt;p&gt;
+Source: http://www.fairchildsemi.com/products/discrete/pdf/soic4_dim.pdf</description>
+<wire x1="-2.35" y1="2" x2="2.35" y2="2" width="0.2032" layer="21"/>
+<wire x1="2.35" y1="2" x2="2.35" y2="-2" width="0.2032" layer="21"/>
+<wire x1="2.35" y1="-2" x2="-2.35" y2="-2" width="0.2032" layer="21"/>
+<wire x1="-2.35" y1="-2" x2="-2.35" y2="2" width="0.2032" layer="21"/>
+<wire x1="-1.905" y1="0.97" x2="-1.27" y2="0.97" width="0.1016" layer="21"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0.635" width="0.1016" layer="21"/>
+<wire x1="0.955" y1="0.945" x2="1.59" y2="0.945" width="0.1016" layer="21"/>
+<wire x1="-1.9" y1="-1.275" x2="-1.6" y2="-1.275" width="0.1016" layer="21" curve="-99.939481"/>
+<wire x1="-1.3" y1="-1.275" x2="-1.6" y2="-1.275" width="0.1016" layer="21" curve="-99.939481"/>
+<wire x1="1.275" y1="-1.275" x2="1.575" y2="-1.275" width="0.1016" layer="21" curve="-99.939481"/>
+<wire x1="1.875" y1="-1.275" x2="1.575" y2="-1.275" width="0.1016" layer="21" curve="-99.939481"/>
+<smd name="-" x="-1.3" y="3.05" dx="1.2" dy="1.2" layer="1"/>
+<smd name="+" x="1.3" y="3.05" dx="1.2" dy="1.2" layer="1"/>
+<smd name="~2" x="1.3" y="-3.05" dx="1.2" dy="1.2" layer="1" rot="R180"/>
+<smd name="~1" x="-1.3" y="-3.05" dx="1.2" dy="1.2" layer="1" rot="R180"/>
+<text x="-2.54" y="-1.905" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="3.81" y="-1.905" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-1.75" y1="2.05" x2="-0.95" y2="3.45" layer="51"/>
+<rectangle x1="0.95" y1="2.05" x2="1.75" y2="3.45" layer="51"/>
+<rectangle x1="0.95" y1="-3.45" x2="1.75" y2="-2.05" layer="51" rot="R180"/>
+<rectangle x1="-1.75" y1="-3.45" x2="-0.95" y2="-2.05" layer="51" rot="R180"/>
+<rectangle x1="-2.05" y1="1.5" x2="2.05" y2="1.8" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="DB">
+<wire x1="-1.905" y1="-3.175" x2="-4.064" y2="-2.794" width="0.254" layer="94"/>
+<wire x1="-1.905" y1="-3.175" x2="-2.286" y2="-1.016" width="0.254" layer="94"/>
+<wire x1="-2.7178" y1="-4.0386" x2="-0.9398" y2="-2.2606" width="0.254" layer="94"/>
+<wire x1="-1.905" y1="3.175" x2="-4.064" y2="2.794" width="0.254" layer="94"/>
+<wire x1="-1.905" y1="3.175" x2="-2.286" y2="1.016" width="0.254" layer="94"/>
+<wire x1="-2.7178" y1="4.0386" x2="-1.0668" y2="2.3876" width="0.254" layer="94"/>
+<wire x1="3.175" y1="1.905" x2="2.794" y2="4.064" width="0.254" layer="94"/>
+<wire x1="3.175" y1="1.905" x2="1.016" y2="2.286" width="0.254" layer="94"/>
+<wire x1="2.3622" y1="1.016" x2="4.1402" y2="2.794" width="0.254" layer="94"/>
+<wire x1="3.175" y1="-1.905" x2="2.794" y2="-4.064" width="0.254" layer="94"/>
+<wire x1="3.175" y1="-1.905" x2="1.016" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="2.3622" y1="-1.0668" x2="4.1402" y2="-2.8448" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="3.175" y2="-1.905" width="0.1524" layer="94"/>
+<wire x1="0" y1="-5.08" x2="-1.905" y2="-3.175" width="0.1524" layer="94"/>
+<wire x1="-3.2766" y1="-1.8034" x2="-5.08" y2="0" width="0.1524" layer="94"/>
+<wire x1="-4.064" y1="-2.794" x2="-2.286" y2="-1.016" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-3.2766" y2="1.8034" width="0.1524" layer="94"/>
+<wire x1="-4.064" y1="2.794" x2="-2.286" y2="1.016" width="0.254" layer="94"/>
+<wire x1="-1.905" y1="3.175" x2="0" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="0" y1="5.08" x2="1.8034" y2="3.2766" width="0.1524" layer="94"/>
+<wire x1="1.016" y1="2.286" x2="2.794" y2="4.064" width="0.254" layer="94"/>
+<wire x1="3.175" y1="1.905" x2="5.08" y2="0" width="0.1524" layer="94"/>
+<wire x1="0" y1="-5.08" x2="1.8034" y2="-3.2766" width="0.1524" layer="94"/>
+<wire x1="1.016" y1="-2.286" x2="2.794" y2="-4.064" width="0.254" layer="94"/>
+<text x="5.08" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<text x="5.08" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<pin name="AC1" x="0" y="5.08" visible="off" length="point" direction="pas" rot="R270"/>
+<pin name="+" x="5.08" y="0" visible="off" length="point" direction="pas" rot="R180"/>
+<pin name="AC2" x="0" y="-5.08" visible="off" length="point" direction="pas" rot="R90"/>
+<pin name="-" x="-5.08" y="0" visible="off" length="point" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MB*S" prefix="B">
+<description>&lt;b&gt;Bridge Rectifier&lt;/b&gt;&lt;p&gt;
+Source: http://www.fairchildsemi.com/ds/MB/MB6S.pdf</description>
+<gates>
+<gate name="G$1" symbol="DB" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOIC-4">
+<connects>
+<connect gate="G$1" pin="+" pad="+"/>
+<connect gate="G$1" pin="-" pad="-"/>
+<connect gate="G$1" pin="AC1" pad="~1"/>
+<connect gate="G$1" pin="AC2" pad="~2"/>
+</connects>
+<technologies>
+<technology name="1"/>
+<technology name="2"/>
+<technology name="4"/>
+<technology name="6"/>
+<technology name="8"/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -15120,7 +15213,8 @@ Details see: &lt;a href="http://katalog.we-online.de/en/led/WL-SFTW?m"&gt;http:/
 <part name="LED" library="Wuerth_Elektronik_LEDs_rev15b" deviceset="WL-SFTW" device="-150141M173100-R&amp;G&amp;B"/>
 <part name="P+14" library="supply1" deviceset="+5V" device=""/>
 <part name="R12" library="SparkFun" deviceset="RESISTOR" device="" value="230"/>
-<part name="R13" library="SparkFun" deviceset="RESISTOR" device="" value="90"/>
+<part name="R13" library="SparkFun" deviceset="RESISTOR" device="" value="768"/>
+<part name="B1" library="rectifier" deviceset="MB*S" device="" technology="2"/>
 </parts>
 <sheets>
 <sheet>
@@ -15129,7 +15223,7 @@ Details see: &lt;a href="http://katalog.we-online.de/en/led/WL-SFTW?m"&gt;http:/
 <text x="254" y="109.22" size="3.81" layer="91">DS1307 Real time clock</text>
 <text x="66.04" y="88.9" size="2.54" layer="91" rot="R90">RGB LED</text>
 <text x="180.34" y="17.78" size="3.81" layer="91" rot="R180">on/off switch</text>
-<text x="132.08" y="-33.02" size="3.81" layer="91">Main input/output</text>
+<text x="129.54" y="-2.54" size="3.81" layer="91">Main input/output</text>
 <text x="187.96" y="-5.08" size="2.54" layer="91">TM1637 con.</text>
 <text x="205.74" y="55.88" size="3.81" layer="91">Output controller</text>
 <text x="281.94" y="48.26" size="2.54" layer="91">ADT7301 Temp sens</text>
@@ -15218,6 +15312,7 @@ Details see: &lt;a href="http://katalog.we-online.de/en/led/WL-SFTW?m"&gt;http:/
 <instance part="P+14" gate="1" x="86.36" y="124.46"/>
 <instance part="R12" gate="G$1" x="86.36" y="93.98" rot="R270"/>
 <instance part="R13" gate="G$1" x="93.98" y="93.98" rot="R270"/>
+<instance part="B1" gate="G$1" x="147.32" y="-38.1"/>
 </instances>
 <busses>
 </busses>
@@ -15408,11 +15503,6 @@ Details see: &lt;a href="http://katalog.we-online.de/en/led/WL-SFTW?m"&gt;http:/
 <wire x1="60.96" y1="-45.72" x2="60.96" y2="-40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SV1" gate="-2" pin="S"/>
-<wire x1="149.86" y1="-17.78" x2="149.86" y2="-25.4" width="0.1524" layer="91"/>
-<label x="149.86" y="-27.94" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
 <pinref part="DISPLAYCONNECTOR" gate="G$1" pin="2"/>
 <wire x1="195.58" y1="-20.32" x2="195.58" y2="-25.4" width="0.1524" layer="91"/>
 <label x="195.58" y="-27.94" size="1.778" layer="95" rot="R90"/>
@@ -15430,6 +15520,11 @@ Details see: &lt;a href="http://katalog.we-online.de/en/led/WL-SFTW?m"&gt;http:/
 <pinref part="SW1" gate="G$4" pin="G"/>
 <junction x="187.96" y="93.98"/>
 <junction x="200.66" y="93.98"/>
+</segment>
+<segment>
+<pinref part="B1" gate="G$1" pin="-"/>
+<wire x1="142.24" y1="-38.1" x2="137.16" y2="-38.1" width="0.1524" layer="91"/>
+<label x="137.16" y="-38.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RESET" class="0">
@@ -15753,9 +15848,9 @@ Details see: &lt;a href="http://katalog.we-online.de/en/led/WL-SFTW?m"&gt;http:/
 <wire x1="12.7" y1="-22.86" x2="12.7" y2="-25.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SV1" gate="-3" pin="S"/>
-<wire x1="144.78" y1="-17.78" x2="144.78" y2="-25.4" width="0.1524" layer="91"/>
-<label x="139.7" y="-25.4" size="1.778" layer="95"/>
+<pinref part="B1" gate="G$1" pin="+"/>
+<wire x1="152.4" y1="-38.1" x2="154.94" y2="-38.1" width="0.1524" layer="91"/>
+<label x="152.4" y="-38.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="OUTPUT" class="0">
@@ -15903,6 +15998,25 @@ Details see: &lt;a href="http://katalog.we-online.de/en/led/WL-SFTW?m"&gt;http:/
 <pinref part="R13" gate="G$1" pin="1"/>
 <pinref part="LED" gate="G$1" pin="GC"/>
 <wire x1="93.98" y1="99.06" x2="93.98" y2="101.6" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="B1" gate="G$1" pin="AC1"/>
+<wire x1="147.32" y1="-33.02" x2="147.32" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="-25.4" x2="144.78" y2="-25.4" width="0.1524" layer="91"/>
+<pinref part="SV1" gate="-3" pin="S"/>
+<wire x1="144.78" y1="-25.4" x2="144.78" y2="-17.78" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="B1" gate="G$1" pin="AC2"/>
+<wire x1="147.32" y1="-43.18" x2="157.48" y2="-43.18" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="-43.18" x2="157.48" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="-30.48" x2="149.86" y2="-30.48" width="0.1524" layer="91"/>
+<pinref part="SV1" gate="-2" pin="S"/>
+<wire x1="149.86" y1="-30.48" x2="149.86" y2="-17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
