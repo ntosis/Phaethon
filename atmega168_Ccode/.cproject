@@ -89,6 +89,7 @@
 								<option id="de.innot.avreclipse.assembler.option.debug.level.118920104" name="Generate Debugging Info" superClass="de.innot.avreclipse.assembler.option.debug.level" value="de.innot.avreclipse.assembler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.asm.option.include.paths.504465602" name="#include paths for preprocessor(-I)" superClass="de.innot.avreclipse.asm.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/HeatingSystem"/>
+									<listOptionValue builtIn="false" value="/home/unix/Phaethon/atmega168_Ccode/ctrlSystem"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/PID"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/tm1637"/>
@@ -107,6 +108,7 @@
 								<option id="de.innot.avreclipse.compiler.option.optimize.346243217" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.2056456749" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/HeatingSystem"/>
+									<listOptionValue builtIn="false" value="/home/unix/Phaethon/atmega168_Ccode/ctrlSystem"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/u8glib"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/PID"/>
@@ -157,12 +159,6 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="Phaethon_Ccode.de.innot.avreclipse.project.winavr.elf_2.1.0.414159308" name="AVR Cross Target Application" projectType="de.innot.avreclipse.project.winavr.elf_2.1.0"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="de.innot.avreclipse.configuration.app.release.513583929;de.innot.avreclipse.configuration.app.release.513583929.;de.innot.avreclipse.tool.compiler.winavr.app.release.1570564227;de.innot.avreclipse.compiler.winavr.input.1869750004">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="de.innot.avreclipse.core.AVRGCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Release">
@@ -173,4 +169,13 @@
 		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="de.innot.avreclipse.configuration.app.release.513583929;de.innot.avreclipse.configuration.app.release.513583929.;de.innot.avreclipse.tool.compiler.winavr.app.release.1570564227;de.innot.avreclipse.compiler.winavr.input.1869750004">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="de.innot.avreclipse.core.AVRGCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="de.innot.avreclipse.configuration.app.debug.988929855;de.innot.avreclipse.configuration.app.debug.988929855.;de.innot.avreclipse.tool.compiler.winavr.app.debug.604081647;de.innot.avreclipse.compiler.winavr.input.386931677">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="de.innot.avreclipse.core.AVRGCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
 </cproject>

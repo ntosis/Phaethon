@@ -12,16 +12,16 @@
 #include "pinmacros.h"
 #include "ds1307.h"
 #include "RtrEncdBtn.h"
-#include "tm1637.h"
 
 void autoProgram();
 void setStateOfHeatingSystem(bool state);
 void LEDfunction(void);
-void flashAutoFunctionIfIsOn(void);
 uint16_t returnDebugInfo();
-extern bool autoProgramSelected;
-extern bool manualProgramSelected;
+extern boolean_T stateOfProgram; /* '<S5>/XOR1' */
+extern boolean_T selectProgram; /* '<S2>/XOR1' */
 extern bool autoProgramTimeEnabled;
-extern bool stateOfHeatingSystem;
+extern boolean_T stateOfRelay; /* '<S1>/Logical Operator' */
+
+
 
 #endif /* HEATINGSYS_H_ */

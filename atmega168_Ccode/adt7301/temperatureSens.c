@@ -1,7 +1,6 @@
 #include "temperatureSens.h"
 
-//slave select
-#define Sensor_SS       D,5
+uint8_T Temperature=0;
 
 void initTempSens() {
 
@@ -28,5 +27,6 @@ float actualTemperature() {
     // convert the temperature to celsius and display it:
     TempVal = (SensorData[0] << 8) + SensorData[1];
     ADC_Temp_Code_dec = (float)TempVal ;
+    Temperature = TempVal / 32.0;
     return (RoomTemperature = TempVal / 32.0);
 }
