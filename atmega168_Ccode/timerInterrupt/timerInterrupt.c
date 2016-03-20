@@ -30,7 +30,7 @@ void timerInit() {
 ISR (TIMER1_COMPA_vect)
 {
 	//counter100MS++;
-	//if(counter100MS==100) counter100MS=0;
+	if(counter100MS==UINT8_MAX) counter100MS=0;
 	// cycle through available tasks
 	        for(uint8_t i=0;i<MAX_TASKS;i++)
 	        {

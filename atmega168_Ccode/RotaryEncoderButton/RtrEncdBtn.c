@@ -30,30 +30,31 @@ ISR (INT0_vect)
 
 ISR(INT1_vect) {
 
-    (ArrayOfClicks+pnt)->timeOfClick=counter100MS;
-    (ArrayOfClicks+pnt)->clicked=true;
-     pnt++;
+    ArrayOfClicks[pnt].timeOfClick=counter100MS;
+    ArrayOfClicks[pnt].clicked=true;
+    pnt++;
          //
     if(pnt==5) pnt=0;
-    if(signalButton<2)signalButton++;
+    if(signalButton<2) signalButton++;
 }
 void checkStruct() {
 
   cli();
+  pnt=0;
  clicked=false;
  doubleClicked=false;
   for(int i=0;i<5;i++) {
          if(i<4){
          if(ArrayOfClicks[i].clicked==true)  {
              if(ArrayOfClicks[i+1].clicked==true) {
-               int dt= (ArrayOfClicks[i+1].timeOfClick)-(ArrayOfClicks[i].timeOfClick);
+            	int8_t dt= (ArrayOfClicks[i+1].timeOfClick)-(ArrayOfClicks[i].timeOfClick);
                if(dt<7) {
             	   doubleClicked=true;
-                 //jump to next incoming signal.
-                  i++;
+                   //jump to next incoming signal.
+            	   i++;
+            	   continue;
                 }
                else clicked=true;
-
              }
              else clicked=true;
          }
@@ -66,6 +67,7 @@ void checkStruct() {
                if(dt<7) {
             	   doubleClicked=true;
                //i++;
+            	   continue;
              }
                else clicked=true;
 
