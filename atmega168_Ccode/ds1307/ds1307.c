@@ -310,13 +310,14 @@ void _draw(uint8_t idx)
 	}
 	else if(idx==2) {
 
-			if(day>7) return; // Boundary error check
+			if((day>7)||(day<1)) day=1; // Boundary error check
 			sprintf(buf,"Set day = %s",daysInWords[day-1]);
 
 		}
 	else if(idx==3) {
 
-				if(day>7) return; // Boundary error check
+				if((month>12)||(month<1)) month=1; // Boundary error check
+				if(calendarDay<1) calendarDay=1;
 				y_pos=30;
 				u8g_DrawStr(&u8g, 0, 10,"Set date");
 				u8g_DrawStr(&u8g, 0, 20,"Format dd/mm/yyyy");
