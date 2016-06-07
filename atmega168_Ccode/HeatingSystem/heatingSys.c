@@ -50,22 +50,21 @@ void setStateOfHeatingSystem(bool state) {
 
 void LEDfunction() {
 	if(!stateOfProgram) {
-		__HIGH(RED_LED);
-	}
-	else {
 		__LOW(RED_LED);
-	}
-	if(!selectProgram) {
 		__HIGH(GREEN_LED);
 	}
-	else if(selectProgram) {
+	else if((stateOfProgram)&&(!selectProgram)){
+		__HIGH(RED_LED);
+		__LOW(GREEN_LED);
+	}
+	else if((stateOfProgram)&&(selectProgram)) {
 		__TOGGLE(GREEN_LED);
 	}
 	if(stateOfRelay==true) {
 		__TOGGLE(BLUE_LED);
 	}
 	else if(stateOfRelay==false) {
-		__LOW(BLUE_LED);
+		__HIGH(BLUE_LED);
 	}
 }
 uint16_t returnDebugInfo() {

@@ -17,7 +17,6 @@ void u8g_setup(void);
 void draw(void);
 void drawTime(void);
 void drawSollTemp(void);
-void Set_Input(int16_t inputValue);
 void showDebugInfo(void);
 void showTimeNow(void);
 void showSolltemp(void);
@@ -31,6 +30,8 @@ int main(void)
 {
 	int set;
 	__OUTPUT(RED_LED);
+	__OUTPUT(GREEN_LED);
+	__OUTPUT(BLUE_LED);
 
 	_delay_ms(20);
 	//TM1637DisplayInit();
@@ -86,13 +87,6 @@ void ButtonAction(void) {
 	checkStruct();
 	checkHoldButton(); //inline function to check hold buton.();
 }
-void Set_Input(int16_t inputValue)
-{
-  if(inputValue<=0) setStateOfHeatingSystem(false);
-else if(inputValue>0) setStateOfHeatingSystem(true);
- // showNumberDec(inputValue, false, 4,0);
-}
-
 //The pin have to be HIGH to turn off the heating system
 void commandToRelay() {
 	if(stateOfRelay) {
