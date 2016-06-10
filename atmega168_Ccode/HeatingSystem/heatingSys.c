@@ -59,6 +59,7 @@ void LEDfunction() {
 	}
 	else if((stateOfProgram)&&(selectProgram)) {
 		__TOGGLE(GREEN_LED);
+		__HIGH(RED_LED);
 	}
 	if(stateOfRelay==true) {
 		__TOGGLE(BLUE_LED);
