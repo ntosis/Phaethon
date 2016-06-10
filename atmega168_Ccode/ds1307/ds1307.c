@@ -297,7 +297,7 @@ void setTimeLoop(void) {
 void _draw(uint8_t idx)
 {
 	u8g_SetFont(&u8g, u8g_font_6x10);
-	uint8_t y_pos=10;
+	uint8_t y_pos=10; //
 	if(idx==0) {
 
 			sprintf(buf,"Set hour = %02d",hour);
