@@ -7,6 +7,7 @@
 #include "Ctrl_Subsystem.h"
 #include "heatingSys.h"
 #include "u8g.h"
+#include <avr/pgmspace.h>
 //#include "pinmacros.h"
 
 void updateSollTemperature();
