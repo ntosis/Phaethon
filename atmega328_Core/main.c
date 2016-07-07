@@ -8,6 +8,7 @@
 #include "heatingSys.h"
 #include "u8g.h"
 #include <avr/pgmspace.h>
+#include <eeprom_calib.h>
 //#include "pinmacros.h"
 
 void updateSollTemperature();
@@ -25,10 +26,13 @@ extern u8g_t u8g;
 extern pidData_t pidData;
 extern uint8_t SOLLtemperature;
 extern int16_t inputValue;
+
 static char buf[80];
 
 int main(void)
 {
+	LoadCALvars();
+
 	int set;
 	__OUTPUT(RED_LED);
 	__OUTPUT(GREEN_LED);
@@ -142,7 +146,7 @@ void draw(void)
   int T = roundf(actualTemperature());
   sprintf(buf,"Tem/re= %d",T);
   u8g_DrawStr(&u8g, 65,30,buf);
-  sprintf(buf,"Soll/Te= %d",SOLLtemperature);
+  sprintf(buf,"Soll/Te= %d",type);
   u8g_DrawStr(&u8g, 61,40,buf);
 }
 void showDebugInfo(void) {

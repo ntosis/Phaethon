@@ -89,6 +89,7 @@
 								<option id="de.innot.avreclipse.assembler.option.debug.level.118920104" name="Generate Debugging Info" superClass="de.innot.avreclipse.assembler.option.debug.level" value="de.innot.avreclipse.assembler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.asm.option.include.paths.504465602" name="#include paths for preprocessor(-I)" superClass="de.innot.avreclipse.asm.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/HeatingSystem"/>
+									<listOptionValue builtIn="false" value="/home/unix/Phaethon/atmega168_Ccode/eeprom_calib"/>
 									<listOptionValue builtIn="false" value="/home/unix/Phaethon/atmega168_Ccode/ctrlSystem"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/PID"/>
@@ -108,6 +109,7 @@
 								<option id="de.innot.avreclipse.compiler.option.optimize.346243217" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.2056456749" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/HeatingSystem"/>
+									<listOptionValue builtIn="false" value="/home/unix/Phaethon/atmega168_Ccode/eeprom_calib"/>
 									<listOptionValue builtIn="false" value="/home/unix/Phaethon/atmega168_Ccode/ctrlSystem"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode/u8glib"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega168_Ccode"/>
