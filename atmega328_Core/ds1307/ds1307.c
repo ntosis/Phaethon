@@ -3,7 +3,7 @@
 //      2. Define RTC Connections in i2c.h
 #include "ds1307.h"
 #include <avr/io.h>
-
+#include <stdio.h>
 char buff[8];
 char mystr[8];
 int temp;
@@ -300,18 +300,18 @@ void _draw(uint8_t idx)
 	uint8_t y_pos=10; //
 	if(idx==0) {
 
-			sprintf(buf,"Set hour = %02d",hour);
+			sprintf_P(buf,PSTR("Set hour = %02d"),hour);
 
 	}
 	else if(idx==1) {
 
-		    sprintf(buf,"Set minute = %02d",minute);
+		    sprintf_P(buf,PSTR("Set minute = %02d"),minute);
 
 	}
 	else if(idx==2) {
 
 			if((day>7)||(day<1)) day=1; // Boundary error check
-			sprintf(buf,"Set day = %s",daysInWords[day-1]);
+			sprintf_P(buf,PSTR("Set day = %s"),daysInWords[day-1]);
 
 		}
 	else if(idx==3) {

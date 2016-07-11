@@ -26,7 +26,7 @@ int GetDD();
 int GetMonth();
 int GetYY();
 static void _draw(uint8_t idx);
-static char buf[80];
+extern char buf[80];
 extern u8g_t u8g;
 static int8_t hour;
 static int8_t minute;
