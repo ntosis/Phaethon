@@ -11,12 +11,10 @@
 #include <avr/eeprom.h>
 // Create structure
 typedef struct {
-    uint8_t  cycles;    // Cycles in buffer
-    int8_t   amp;       // Amplitude range: [-127,0]
-    uint8_t  type;      // Waveform type
-    uint16_t duty;      // Duty cycle range: [0,512]
-    int8_t   offset;    // Offset
-    uint32_t desiredF;  // Desired frequency
+    uint8_t  cycles;
+    float K_P;
+    float K_I;
+    float K_D;
 } CAL_PARAM;
 
 void LoadCALvars(void);
@@ -25,6 +23,9 @@ void SaveCALvars(void);
 extern CAL_PARAM CALinRAM;
 
 #define cycles CALinRAM.cycles
-#define duty CALinRAM.duty
-#define type CALinRAM.type
+#define K_P CALinRAM.K_P
+#define K_I CALinRAM.K_I
+#define K_D CALinRAM.K_D
+
 #endif /* EEPROM_CALIB_H_ */
+

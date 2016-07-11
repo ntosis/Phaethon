@@ -1,7 +1,7 @@
 #include <eeprom_calib.h>
 
 // Create variable in EEPROM with initial values
-CAL_PARAM EEMEM CALinEE = { 1, -65, 55, 256, 0, 44000 };
+CAL_PARAM EEMEM CALinEE = { 1,1.56,0.001,800};
 // Create variable in RAM
 CAL_PARAM  CALinRAM;
 
@@ -15,3 +15,8 @@ void SaveCALvars(void) {
 
 	eeprom_write_block(&CALinRAM, &CALinEE, sizeof(CAL_PARAM));
 }
+/*! \brief P, I and D parameter values
+*
+* The K_P, K_I and K_D values (P, I and D gains)
+* need to be modified to adapt to the application at hand
+*/

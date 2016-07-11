@@ -21,18 +21,6 @@
  *****************************************************************************/
 
 #include "pid.h"
-
-/*! \brief P, I and D parameter values
-*
-* The K_P, K_I and K_D values (P, I and D gains)
-* need to be modified to adapt to the application at hand
-*/
-//! \xrefitem todo "Todo" "Todo list"
-float K_P = 1.56;
-//! \xrefitem todo "Todo" "Todo list"
-float K_I= 0.001;
-//! \xrefitem todo "Todo" "Todo list"
-float K_D = 800;
 /*! \brief Initialisation of PID controller parameters.
  *
  *  Initialise the variables used by the PID algorithm.
