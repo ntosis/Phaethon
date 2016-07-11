@@ -9,6 +9,7 @@
 #include "u8g.h"
 #include <avr/pgmspace.h>
 #include <eeprom_calib.h>
+#include <stdio.h>
 //#include "pinmacros.h"
 
 void updateSollTemperature();
@@ -27,7 +28,7 @@ extern pidData_t pidData;
 extern uint8_t SOLLtemperature;
 extern int16_t inputValue;
 
-static char buf[80];
+char buf[80];
 
 int main(void)
 {
@@ -126,27 +127,27 @@ void draw(void)
   bool aut,man;
   if(selectProgram) aut=1,man=0;
   else aut=0,man=1;
-  sprintf(buf,"StOnOff= %d",stateOfProgram);
+  sprintf_P(buf,PSTR("StOnOff= %d"),stateOfProgram);
   u8g_SetFont(&u8g, u8g_font_6x10);
   u8g_DrawStr(&u8g, 0, 10,buf);
-  sprintf(buf,"Man= %d",man);
+  sprintf_P(buf,PSTR("Man= %d"),man);
   u8g_DrawStr(&u8g, 0,20,buf);
-  sprintf(buf,"Aut= %d",aut);
+  sprintf_P(buf,PSTR("Aut= %d"),aut);
   u8g_DrawStr(&u8g, 0,30,buf);
-  sprintf(buf,"TmEnb= %d",autoProgramTimeEnabled);
+  sprintf_P(buf,PSTR("TmEnb= %d"),autoProgramTimeEnabled);
   u8g_DrawStr(&u8g, 0,40,buf);
-  sprintf(buf,"P%.1f:I%.1f:D%.1f",0.5,K_I,K_D);
+  sprintf_P(buf,PSTR("P%.1f:I%.1f:D%.1f"),0.5,K_I,K_D);
   u8g_DrawStr(&u8g, 0,50,buf);
-  sprintf(buf,"PID= %d",inputValue);
+  sprintf_P(buf,PSTR("PID= %d"),inputValue);
   u8g_DrawStr(&u8g, 0,60,buf);
-  sprintf(buf,"Relay= %d",stateOfRelay);
+  sprintf_P(buf,PSTR("Relay= %d"),stateOfRelay);
   u8g_DrawStr(&u8g, 65,10,buf);
-  sprintf(buf,"Day= %d",GetDoW());
+  sprintf_P(buf,PSTR("Day= %d"),GetDoW());
   u8g_DrawStr(&u8g, 65,20,buf);
   int T = roundf(actualTemperature());
-  sprintf(buf,"Tem/re= %d",T);
+  sprintf_P(buf,PSTR("Tem/re= %d"),T);
   u8g_DrawStr(&u8g, 65,30,buf);
-  sprintf(buf,"Soll/Te= %d",SOLLtemperature);
+  sprintf_P(buf,PSTR("Soll/Te= %d"),SOLLtemperature);
   u8g_DrawStr(&u8g, 61,40,buf);
 }
 void showDebugInfo(void) {
