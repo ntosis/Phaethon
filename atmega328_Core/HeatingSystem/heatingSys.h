@@ -12,15 +12,15 @@
 #include "pinmacros.h"
 #include "ds1307.h"
 #include "RtrEncdBtn.h"
+#include <Ctrl_Subsystem.h>
 
 void autoProgram();
-void setStateOfHeatingSystem(bool state);
 void LEDfunction(void);
 uint16_t returnDebugInfo();
 extern boolean_T stateOfProgram; /* '<S5>/XOR1' */
 extern boolean_T selectProgram; /* '<S2>/XOR1' */
 extern bool autoProgramTimeEnabled;
-extern boolean_T stateOfRelay; /* '<S1>/Logical Operator' */
+extern ExtY_Ctrl_Subsystem Ctrl_Subsystem_Y; /* '<S1>/Logical Operator' */
 
 
 

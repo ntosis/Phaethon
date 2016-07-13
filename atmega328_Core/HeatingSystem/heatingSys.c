@@ -43,11 +43,6 @@ void autoProgram() {
   }
 
 }
-void setStateOfHeatingSystem(bool state) {
-	stateOfHeatingSystem = state;
-
-}
-
 void LEDfunction() {
 	if(!stateOfProgram) {
 		__LOW(RED_LED);
@@ -61,10 +56,10 @@ void LEDfunction() {
 		__TOGGLE(GREEN_LED);
 		__HIGH(RED_LED);
 	}
-	if(stateOfRelay==true) {
+	if(Ctrl_Subsystem_Y.Out1==true) {
 		__TOGGLE(BLUE_LED);
 	}
-	else if(stateOfRelay==false) {
+	else if(Ctrl_Subsystem_Y.Out1==false) {
 		__HIGH(BLUE_LED);
 	}
 }

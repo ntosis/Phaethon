@@ -1,7 +1,7 @@
 #include <eeprom_calib.h>
 
 // Create variable in EEPROM with initial values
-CAL_PARAM EEMEM CALinEE = { 1,1.56,0.001,800};
+CAL_PARAM EEMEM CALinEE = { 0,1.56,0.001,800,1.56,0.001,800};
 // Create variable in RAM
 CAL_PARAM  CALinRAM;
 

@@ -23,18 +23,6 @@
 #include "stdint.h"
 
 #define SCALING_FACTOR  128
-/*! \brief P, I and D parameter values
-*
-* The K_P, K_I and K_D values (P, I and D gains)
-* need to be modified to adapt to the application at hand
-*/
-//! \xrefitem todo "Todo" "Todo list"
-extern float K_P;
-//! \xrefitem todo "Todo" "Todo list"
-extern float K_I;
-//! \xrefitem todo "Todo" "Todo list"
-extern float K_D;
-
 /*! \brief PID Status
  *
  * Setpoints and data used by the PID control algorithm

@@ -24,10 +24,12 @@ void showDebugInfo(void);
 void showTimeNow(void);
 void showSolltemp(void);
 extern u8g_t u8g;
-extern pidData_t pidData;
-extern uint8_t SOLLtemperature;
-extern int16_t inputValue;
-
+extern pidData_t pidData_Htng;
+extern pidData_t pidData_Coolg;
+extern int8_t SOLLtemperature;
+extern int16_t inputValue_Htng;
+extern int16_t inputValue_Coolg;
+extern ExtY_Ctrl_Subsystem Ctrl_Subsystem_Y;
 char buf[80];
 
 int main(void)
@@ -45,7 +47,8 @@ int main(void)
 	initRtrEncoder();
 	u8g_setup();
 	timerInit();
-	pid_Init(K_P*SCALING_FACTOR,K_I*SCALING_FACTOR,K_D*SCALING_FACTOR,&pidData);
+	pid_Init(K_P_Htng*SCALING_FACTOR,K_I_Htng*SCALING_FACTOR,K_D_Htng*SCALING_FACTOR,&pidData_Htng);
+	pid_Init(K_P_Coolg*SCALING_FACTOR,K_I_Coolg*SCALING_FACTOR,K_D_Coolg*SCALING_FACTOR,&pidData_Coolg);
 	// set up the task list
     initScheduler();
     //clearDisplay(0,4);
@@ -82,8 +85,6 @@ void updateSollTemperature() {
       SOLLtemperature--;
     else
       SOLLtemperature++;
-     if(SOLLtemperature<5) SOLLtemperature=5;
-    if(SOLLtemperature>40) SOLLtemperature=40;
     showSolltemp();
  }
      TurnDetected = false;    // do NOT repeat IF loop until new rotation detected
@@ -95,11 +96,11 @@ void ButtonAction(void) {
 }
 //The pin have to be HIGH to turn off the heating system
 void commandToRelay() {
-	if(stateOfRelay) {
+	if(Ctrl_Subsystem_Y.Out1) {
 		__LOW(RELAY_PIN);
 	}
 	//If the Thermostat is in OFF state means that we have two turn off the heating system completely.
-	else if(!stateOfRelay) {
+	else if(!Ctrl_Subsystem_Y.Out1) {
 		__HIGH(RELAY_PIN);
 	}
 }
@@ -136,11 +137,11 @@ void draw(void)
   u8g_DrawStr(&u8g, 0,30,buf);
   sprintf_P(buf,PSTR("TmEnb= %d"),autoProgramTimeEnabled);
   u8g_DrawStr(&u8g, 0,40,buf);
-  sprintf_P(buf,PSTR("P%.1f:I%.1f:D%.1f"),0.5,K_I,K_D);
+  sprintf_P(buf,PSTR("PID_H= %d"),inputValue_Htng);
   u8g_DrawStr(&u8g, 0,50,buf);
-  sprintf_P(buf,PSTR("PID= %d"),inputValue);
+  sprintf_P(buf,PSTR("PID_C= %d"),inputValue_Coolg);
   u8g_DrawStr(&u8g, 0,60,buf);
-  sprintf_P(buf,PSTR("Relay= %d"),stateOfRelay);
+  sprintf_P(buf,PSTR("Relay= %d"),Ctrl_Subsystem_Y.Out1);
   u8g_DrawStr(&u8g, 65,10,buf);
   sprintf_P(buf,PSTR("Day= %d"),GetDoW());
   u8g_DrawStr(&u8g, 65,20,buf);
@@ -182,9 +183,11 @@ void showSolltemp(void) {
 		    } while ( u8g_NextPage(&u8g) );
 	}
 void drawSollTemp(void) {
+	uint8_t temp=SOLLtemperature;
 	 u8g_DrawCircle(&u8g, 64, 32, 17, U8G_DRAW_ALL);
 	 u8g_SetFont(&u8g,u8g_font_fub17);
-	 sprintf(buf,"%d",SOLLtemperature);
+	 if(SOLLtemperature<0) temp=temp*(-1);
+	 sprintf(buf,"%d",temp);
 	 u8g_DrawStr(&u8g,64-13,32+7,buf);
 }
 
