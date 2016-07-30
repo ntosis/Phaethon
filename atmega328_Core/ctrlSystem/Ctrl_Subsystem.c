@@ -1,11 +1,11 @@
 #include "Ctrl_Subsystem.h"
-
+#include "pinmacros.h"
 /* Exported block signals */
 boolean_T isCoolingOn;                 /* '<S5>/Compare' */
 boolean_T selectProgram;               /* '<S2>/XOR1' */
 boolean_T stateOfProgram;              /* '<S4>/XOR1' */
 boolean_T isHeatingOn;                 /* '<S3>/NOT' */
-int8_t SOLLtemperature = 22;
+int8_t SOLLtemperature = 20;
 int16_t inputValue_Htng;
 int16_t inputValue_Coolg;
 struct PID_DATA pidData_Htng;
@@ -78,7 +78,6 @@ void Ctrl_Subsystem_step(void)
   int8_T rtb_Solltemperature_intern;
   boolean_T rtb_Merge;
   boolean_T rtb_Merge1;
-  int32_T rtb_FilterCoefficient;
 
   /* RelationalOperator: '<S5>/Compare' incorporates:
    *  Constant: '<S5>/Constant'
@@ -201,7 +200,6 @@ void Ctrl_Subsystem_step(void)
      *  Inport: '<Root>/In2'
      */
     rtb_Compare = (SOLLtemperature <= rtcP_Constant_Value_dj10);
-
     /* Gain: '<S6>/Gain' incorporates:
      *  Inport: '<Root>/In2'
      */

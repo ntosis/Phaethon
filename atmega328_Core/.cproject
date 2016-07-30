@@ -101,6 +101,7 @@
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/RotaryEncoderButton"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/HeatingSystem"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/i2c"/>
+									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/OLED_graphics"/>
 								</option>
 								<inputType id="de.innot.avreclipse.tool.assembler.input.703397220" superClass="de.innot.avreclipse.tool.assembler.input"/>
 							</tool>
@@ -112,6 +113,7 @@
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/eeprom_calib"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/ctrlSystem"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib"/>
+									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/OLED_graphics"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/PID"/>
 									<listOptionValue builtIn="false" value="/home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/tm1637"/>
@@ -125,6 +127,7 @@
 								<option id="de.innot.avreclipse.compiler.option.def.699040016" name="Define Syms (-D)" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="F_CPU=16000000UL"/>
 								</option>
+								<option id="de.innot.avreclipse.compiler.option.otherflags.132856937" name="Other flags" superClass="de.innot.avreclipse.compiler.option.otherflags" value="" valueType="string"/>
 								<inputType id="de.innot.avreclipse.compiler.winavr.input.1869750004" name="C Source Files" superClass="de.innot.avreclipse.compiler.winavr.input"/>
 							</tool>
 							<tool id="de.innot.avreclipse.tool.cppcompiler.app.release.2137001894" name="AVR C++ Compiler" superClass="de.innot.avreclipse.tool.cppcompiler.app.release">
