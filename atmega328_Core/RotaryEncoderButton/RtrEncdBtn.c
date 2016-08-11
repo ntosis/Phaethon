@@ -1,10 +1,15 @@
 #include "RtrEncdBtn.h"
 #include <stdlib.h>
 #include "heatingSys.h"
+#include <eeprom_calib.h>
 bool clicked=false;
 bool doubleClicked=false;
 bool onStateofProgram=false;
 uint8_t holdCnt=0;
+//step between Heating/Cooling
+uint8_t smartCntUp=0;
+uint8_t smartCntDown=0;
+uint8_t smartCntFlag=0;
 extern volatile uint8_t signalButton = 0;
 extern volatile bool up = false;
 extern volatile bool TurnDetected = false;
@@ -83,3 +88,29 @@ void checkStruct() {
    sei();
 }
 uint8_t returnStateofProgram() {return onStateofProgram;}
+void smartChangeBtwnHeatCool() {
+
+	if(smartCntUp>smartCnt_C){ //Calibrations parameter
+
+		if(SOLLtemperature<0)
+
+			{SOLLtemperature= 22;}
+	}
+
+	else if(smartCntDown>smartCnt_C) {
+
+		if(SOLLtemperature > 0)
+
+					{SOLLtemperature= -22;}
+
+	}
+}
+void resetSmartCnt() {
+	if(smartCntFlag) {
+		smartCntFlag=0;
+	}
+	else {
+	smartCntUp=0;
+	smartCntDown=0;
+	}
+}

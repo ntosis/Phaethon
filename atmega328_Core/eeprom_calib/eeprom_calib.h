@@ -18,6 +18,8 @@ typedef struct {
     float K_P_Coolg;
     float K_I_Coolg;
     float K_D_Coolg;
+    uint8_t smartCnt_C;
+    uint8_t debugInfosFlag_C:1;
 } CAL_PARAM;
 
 void LoadCALvars(void);
@@ -33,5 +35,7 @@ extern CAL_PARAM CALinRAM;
 #define K_I_Coolg CALinRAM.K_I_Coolg
 #define K_D_Coolg CALinRAM.K_D_Coolg
 #define oneLevelSystem_C CALinRAM.oneLevelSystem_C
+#define smartCnt_C CALinRAM.smartCnt_C
+#define debugInfosFlag_C CALinRAM.debugInfosFlag_C
 #endif /* EEPROM_CALIB_H_ */
 

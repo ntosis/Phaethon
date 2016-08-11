@@ -130,7 +130,7 @@ isCoolingOn         0x1               ./ctrlSystem/Ctrl_Subsystem.o
 inputValue_Coolg    0x2               ./ctrlSystem/Ctrl_Subsystem.o
 u8g                 0x37              ./ds1307/ds1307.o
 buff                0x8               ./ds1307/ds1307.o
-CALinRAM            0x19              ./eeprom_calib/eeprom_calib.o
+CALinRAM            0x1b              ./eeprom_calib/eeprom_calib.o
 temp                0x2               ./ds1307/ds1307.o
 inputValue_Htng     0x2               ./ctrlSystem/Ctrl_Subsystem.o
 pidData_Coolg       0x12              ./ctrlSystem/Ctrl_Subsystem.o
@@ -1790,7 +1790,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000     0x67fc
+.text           0x0000000000000000     0x6892
  *(.vectors)
  .vectors       0x0000000000000000       0x68 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/crtm328.o
                 0x0000000000000000                __vectors
@@ -1828,81 +1828,82 @@ END GROUP
  .progmem.data.onTimesAM
                 0x0000000000000223        0xe ./HeatingSystem/heatingSys.o
                 0x0000000000000223                onTimesAM
- .progmem.data.__c.4106
+ .progmem.data.__c.4147
                 0x0000000000000231        0x5 ./main.o
- .progmem.data.__c.4103
+ .progmem.data.__c.4144
                 0x0000000000000236        0xe ./main.o
- .progmem.data.__c.4101
+ .progmem.data.__c.4142
                 0x0000000000000244        0x8 ./main.o
- .progmem.data.__c.4086
+ .progmem.data.__c.4127
                 0x000000000000024c        0xb ./main.o
- .progmem.data.__c.4084
+ .progmem.data.__c.4125
                 0x0000000000000257        0xa ./main.o
- .progmem.data.__c.4081
-                0x0000000000000261        0x8 ./main.o
- .progmem.data.__c.4079
-                0x0000000000000269        0xa ./main.o
- .progmem.data.__c.4077
-                0x0000000000000273        0xa ./main.o
- .progmem.data.__c.4075
-                0x000000000000027d        0xa ./main.o
- .progmem.data.__c.4073
-                0x0000000000000287        0xa ./main.o
- .progmem.data.__c.4071
-                0x0000000000000291        0x8 ./main.o
- .progmem.data.__c.4069
-                0x0000000000000299        0x8 ./main.o
- .progmem.data.__c.4067
-                0x00000000000002a1        0xc ./main.o
+ .progmem.data.__c.4122
+                0x0000000000000261        0x9 ./main.o
+ .progmem.data.__c.4120
+                0x000000000000026a        0xa ./main.o
+ .progmem.data.__c.4118
+                0x0000000000000274        0xc ./main.o
+ .progmem.data.__c.4116
+                0x0000000000000280        0xe ./main.o
+ .progmem.data.__c.4114
+                0x000000000000028e        0xa ./main.o
+ .progmem.data.__c.4112
+                0x0000000000000298        0x8 ./main.o
+ .progmem.data.__c.4110
+                0x00000000000002a0        0x8 ./main.o
+ .progmem.data.__c.4108
+                0x00000000000002a8        0xc ./main.o
  .progmem.data.u8g_dev_ssd13xx_sleep_off
-                0x00000000000002ad        0xb /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
+                0x00000000000002b4        0xb /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
  .progmem.data.u8g_dev_ssd13xx_sleep_on
-                0x00000000000002b8        0x9 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
+                0x00000000000002bf        0x9 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
  .progmem.data.u8g_dev_ssd1306_128x64_data_start
-                0x00000000000002c1        0x8 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
+                0x00000000000002c8        0x8 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
  .progmem.data.u8g_dev_ssd1306_128x64_adafruit2_init_seq
-                0x00000000000002c9       0x26 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
+                0x00000000000002d0       0x26 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
  .progmem.u8g_font_fub17
-                0x00000000000002ef     0x1b1a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font_data.o)
-                0x00000000000002ef                u8g_font_fub17
+                0x00000000000002f6     0x1b1a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font_data.o)
+                0x00000000000002f6                u8g_font_fub17
  .progmem.u8g_font_9x18r
-                0x0000000000001e09      0x590 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font_data.o)
-                0x0000000000001e09                u8g_font_9x18r
+                0x0000000000001e10      0x590 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font_data.o)
+                0x0000000000001e10                u8g_font_9x18r
  .progmem.u8g_font_6x10
-                0x0000000000002399      0x74a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font_data.o)
-                0x0000000000002399                u8g_font_6x10
+                0x00000000000023a0      0x74a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font_data.o)
+                0x00000000000023a0                u8g_font_6x10
  .progmem.u8g_font_10x20
-                0x0000000000002ae3      0xd7d /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font_data.o)
-                0x0000000000002ae3                u8g_font_10x20
-                0x0000000000003860                . = ALIGN (0x2)
+                0x0000000000002aea      0xd7d /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font_data.o)
+                0x0000000000002aea                u8g_font_10x20
+                0x0000000000003868                . = ALIGN (0x2)
+ *fill*         0x0000000000003867        0x1 
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x0000000000003860                __ctors_start = .
+                0x0000000000003868                __ctors_start = .
  *(.ctors)
-                0x0000000000003860                __ctors_end = .
-                0x0000000000003860                __dtors_start = .
+                0x0000000000003868                __ctors_end = .
+                0x0000000000003868                __dtors_start = .
  *(.dtors)
-                0x0000000000003860                __dtors_end = .
+                0x0000000000003868                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x0000000000003860        0x0 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/crtm328.o
-                0x0000000000003860                __init
+ .init0         0x0000000000003868        0x0 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/crtm328.o
+                0x0000000000003868                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x0000000000003860        0xc /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/crtm328.o
+ .init2         0x0000000000003868        0xc /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/crtm328.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x000000000000386c       0x16 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
-                0x000000000000386c                __do_copy_data
- .init4         0x0000000000003882       0x10 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
-                0x0000000000003882                __do_clear_bss
+ .init4         0x0000000000003874       0x16 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+                0x0000000000003874                __do_copy_data
+ .init4         0x000000000000388a       0x10 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000388a                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -1913,475 +1914,499 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000000000003892        0x8 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/crtm328.o
+ .init9         0x000000000000389a        0x8 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/crtm328.o
  *(.init9)
  *(.text)
- .text          0x000000000000389a        0x4 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/crtm328.o
-                0x000000000000389a                __vector_22
-                0x000000000000389a                __vector_24
-                0x000000000000389a                __vector_12
-                0x000000000000389a                __bad_interrupt
-                0x000000000000389a                __vector_6
-                0x000000000000389a                __vector_3
-                0x000000000000389a                __vector_23
-                0x000000000000389a                __vector_25
-                0x000000000000389a                __vector_13
-                0x000000000000389a                __vector_17
-                0x000000000000389a                __vector_19
-                0x000000000000389a                __vector_7
-                0x000000000000389a                __vector_5
-                0x000000000000389a                __vector_4
-                0x000000000000389a                __vector_9
-                0x000000000000389a                __vector_21
-                0x000000000000389a                __vector_15
-                0x000000000000389a                __vector_8
-                0x000000000000389a                __vector_14
-                0x000000000000389a                __vector_10
-                0x000000000000389a                __vector_16
-                0x000000000000389a                __vector_18
-                0x000000000000389a                __vector_20
-                0x000000000000389e                . = ALIGN (0x2)
+ .text          0x00000000000038a2        0x4 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/crtm328.o
+                0x00000000000038a2                __vector_22
+                0x00000000000038a2                __vector_24
+                0x00000000000038a2                __vector_12
+                0x00000000000038a2                __bad_interrupt
+                0x00000000000038a2                __vector_6
+                0x00000000000038a2                __vector_3
+                0x00000000000038a2                __vector_23
+                0x00000000000038a2                __vector_25
+                0x00000000000038a2                __vector_13
+                0x00000000000038a2                __vector_17
+                0x00000000000038a2                __vector_19
+                0x00000000000038a2                __vector_7
+                0x00000000000038a2                __vector_5
+                0x00000000000038a2                __vector_4
+                0x00000000000038a2                __vector_9
+                0x00000000000038a2                __vector_21
+                0x00000000000038a2                __vector_15
+                0x00000000000038a2                __vector_8
+                0x00000000000038a2                __vector_14
+                0x00000000000038a2                __vector_10
+                0x00000000000038a2                __vector_16
+                0x00000000000038a2                __vector_18
+                0x00000000000038a2                __vector_20
+                0x00000000000038a6                . = ALIGN (0x2)
  *(.text.*)
  .text.timerInit
-                0x000000000000389e       0x2e ./timerInterrupt/timerInterrupt.o
-                0x000000000000389e                timerInit
+                0x00000000000038a6       0x2e ./timerInterrupt/timerInterrupt.o
+                0x00000000000038a6                timerInit
  .text.__vector_11
-                0x00000000000038cc       0x60 ./timerInterrupt/timerInterrupt.o
-                0x00000000000038cc                __vector_11
+                0x00000000000038d4       0x60 ./timerInterrupt/timerInterrupt.o
+                0x00000000000038d4                __vector_11
  .text.initScheduler
-                0x000000000000392c       0x28 ./timerInterrupt/timerInterrupt.o
-                0x000000000000392c                initScheduler
- .text.addTask  0x0000000000003954       0x3a ./timerInterrupt/timerInterrupt.o
-                0x0000000000003954                addTask
+                0x0000000000003934       0x28 ./timerInterrupt/timerInterrupt.o
+                0x0000000000003934                initScheduler
+ .text.addTask  0x000000000000395c       0x3a ./timerInterrupt/timerInterrupt.o
+                0x000000000000395c                addTask
  .text.dispatchTasks
-                0x000000000000398e       0x58 ./timerInterrupt/timerInterrupt.o
-                0x000000000000398e                dispatchTasks
+                0x0000000000003996       0x58 ./timerInterrupt/timerInterrupt.o
+                0x0000000000003996                dispatchTasks
  .text.i2c_start
-                0x00000000000039e6       0x46 ./i2c/i2c.o
-                0x00000000000039e6                i2c_start
+                0x00000000000039ee       0x46 ./i2c/i2c.o
+                0x00000000000039ee                i2c_start
  .text.i2c_write
-                0x0000000000003a2c       0x22 ./i2c/i2c.o
-                0x0000000000003a2c                i2c_write
+                0x0000000000003a34       0x22 ./i2c/i2c.o
+                0x0000000000003a34                i2c_write
  .text.i2c_read_ack
-                0x0000000000003a4e       0x14 ./i2c/i2c.o
-                0x0000000000003a4e                i2c_read_ack
+                0x0000000000003a56       0x14 ./i2c/i2c.o
+                0x0000000000003a56                i2c_read_ack
  .text.i2c_read_nack
-                0x0000000000003a62       0x14 ./i2c/i2c.o
-                0x0000000000003a62                i2c_read_nack
+                0x0000000000003a6a       0x14 ./i2c/i2c.o
+                0x0000000000003a6a                i2c_read_nack
  .text.i2c_writeReg
-                0x0000000000003a76       0x68 ./i2c/i2c.o
-                0x0000000000003a76                i2c_writeReg
+                0x0000000000003a7e       0x68 ./i2c/i2c.o
+                0x0000000000003a7e                i2c_writeReg
  .text.i2c_readReg
-                0x0000000000003ade       0x86 ./i2c/i2c.o
-                0x0000000000003ade                i2c_readReg
+                0x0000000000003ae6       0x86 ./i2c/i2c.o
+                0x0000000000003ae6                i2c_readReg
  .text.LoadCALvars
-                0x0000000000003b64       0x10 ./eeprom_calib/eeprom_calib.o
-                0x0000000000003b64                LoadCALvars
- .text._draw    0x0000000000003b74      0x136 ./ds1307/ds1307.o
+                0x0000000000003b6c       0x10 ./eeprom_calib/eeprom_calib.o
+                0x0000000000003b6c                LoadCALvars
+ .text._draw    0x0000000000003b7c      0x136 ./ds1307/ds1307.o
  .text.Read_RTC
-                0x0000000000003caa       0x1a ./ds1307/ds1307.o
-                0x0000000000003caa                Read_RTC
- .text.bcd2dec  0x0000000000003cc4       0x12 ./ds1307/ds1307.o
-                0x0000000000003cc4                bcd2dec
- .text.GetHH    0x0000000000003cd6       0x18 ./ds1307/ds1307.o
-                0x0000000000003cd6                GetHH
- .text.GetMM    0x0000000000003cee       0x10 ./ds1307/ds1307.o
-                0x0000000000003cee                GetMM
- .text.GetDD    0x0000000000003cfe        0xe ./ds1307/ds1307.o
-                0x0000000000003cfe                GetDD
- .text.GetDoW   0x0000000000003d0c        0xe ./ds1307/ds1307.o
-                0x0000000000003d0c                GetDoW
+                0x0000000000003cb2       0x1a ./ds1307/ds1307.o
+                0x0000000000003cb2                Read_RTC
+ .text.bcd2dec  0x0000000000003ccc       0x12 ./ds1307/ds1307.o
+                0x0000000000003ccc                bcd2dec
+ .text.GetHH    0x0000000000003cde       0x18 ./ds1307/ds1307.o
+                0x0000000000003cde                GetHH
+ .text.GetMM    0x0000000000003cf6       0x10 ./ds1307/ds1307.o
+                0x0000000000003cf6                GetMM
+ .text.GetDD    0x0000000000003d06        0xe ./ds1307/ds1307.o
+                0x0000000000003d06                GetDD
+ .text.GetDoW   0x0000000000003d14        0xe ./ds1307/ds1307.o
+                0x0000000000003d14                GetDoW
  .text.GetMonth
-                0x0000000000003d1a        0xe ./ds1307/ds1307.o
-                0x0000000000003d1a                GetMonth
- .text.GetYY    0x0000000000003d28        0xe ./ds1307/ds1307.o
-                0x0000000000003d28                GetYY
- .text.dec2bcd  0x0000000000003d36       0x12 ./ds1307/ds1307.o
-                0x0000000000003d36                dec2bcd
+                0x0000000000003d22        0xe ./ds1307/ds1307.o
+                0x0000000000003d22                GetMonth
+ .text.GetYY    0x0000000000003d30        0xe ./ds1307/ds1307.o
+                0x0000000000003d30                GetYY
+ .text.dec2bcd  0x0000000000003d3e       0x12 ./ds1307/ds1307.o
+                0x0000000000003d3e                dec2bcd
  .text.setTimeLoop
-                0x0000000000003d48      0x428 ./ds1307/ds1307.o
-                0x0000000000003d48                setTimeLoop
+                0x0000000000003d50      0x428 ./ds1307/ds1307.o
+                0x0000000000003d50                setTimeLoop
  .text.Ctrl_Subsystem_step
-                0x0000000000004170      0x1ac ./ctrlSystem/Ctrl_Subsystem.o
-                0x0000000000004170                Ctrl_Subsystem_step
+                0x0000000000004178      0x1ac ./ctrlSystem/Ctrl_Subsystem.o
+                0x0000000000004178                Ctrl_Subsystem_step
  .text.initTempSens
-                0x000000000000431c        0xa ./adt7301/temperatureSens.o
-                0x000000000000431c                initTempSens
+                0x0000000000004324        0xa ./adt7301/temperatureSens.o
+                0x0000000000004324                initTempSens
  .text.actualTemperature
-                0x0000000000004326       0x80 ./adt7301/temperatureSens.o
-                0x0000000000004326                actualTemperature
+                0x000000000000432e       0x80 ./adt7301/temperatureSens.o
+                0x000000000000432e                actualTemperature
  .text.spi_init
-                0x00000000000043a6       0x1a ./SPI/spi.o
-                0x00000000000043a6                spi_init
+                0x00000000000043ae       0x1a ./SPI/spi.o
+                0x00000000000043ae                spi_init
  .text.spi_transfer_sync
-                0x00000000000043c0       0x22 ./SPI/spi.o
-                0x00000000000043c0                spi_transfer_sync
+                0x00000000000043c8       0x22 ./SPI/spi.o
+                0x00000000000043c8                spi_transfer_sync
  .text.initRtrEncoder
-                0x00000000000043e2       0x1a ./RotaryEncoderButton/RtrEncdBtn.o
-                0x00000000000043e2                initRtrEncoder
+                0x00000000000043ea       0x1a ./RotaryEncoderButton/RtrEncdBtn.o
+                0x00000000000043ea                initRtrEncoder
  .text.__vector_1
-                0x00000000000043fc       0x3c ./RotaryEncoderButton/RtrEncdBtn.o
-                0x00000000000043fc                __vector_1
+                0x0000000000004404       0x3c ./RotaryEncoderButton/RtrEncdBtn.o
+                0x0000000000004404                __vector_1
  .text.__vector_2
-                0x0000000000004438       0x94 ./RotaryEncoderButton/RtrEncdBtn.o
-                0x0000000000004438                __vector_2
+                0x0000000000004440       0x94 ./RotaryEncoderButton/RtrEncdBtn.o
+                0x0000000000004440                __vector_2
  .text.checkStruct
-                0x00000000000044cc       0xd0 ./RotaryEncoderButton/RtrEncdBtn.o
-                0x00000000000044cc                checkStruct
+                0x00000000000044d4       0xd0 ./RotaryEncoderButton/RtrEncdBtn.o
+                0x00000000000044d4                checkStruct
+ .text.smartChangeBtwnHeatCool
+                0x00000000000045a4       0x30 ./RotaryEncoderButton/RtrEncdBtn.o
+                0x00000000000045a4                smartChangeBtwnHeatCool
+ .text.resetSmartCnt
+                0x00000000000045d4       0x18 ./RotaryEncoderButton/RtrEncdBtn.o
+                0x00000000000045d4                resetSmartCnt
  .text.pid_Init
-                0x000000000000459c       0x5a ./PID/pid.o
-                0x000000000000459c                pid_Init
+                0x00000000000045ec       0x5a ./PID/pid.o
+                0x00000000000045ec                pid_Init
  .text.pid_Controller
-                0x00000000000045f6      0x15e ./PID/pid.o
-                0x00000000000045f6                pid_Controller
+                0x0000000000004646      0x15e ./PID/pid.o
+                0x0000000000004646                pid_Controller
  .text.autoProgram
-                0x0000000000004754       0xa8 ./HeatingSystem/heatingSys.o
-                0x0000000000004754                autoProgram
+                0x00000000000047a4       0xa8 ./HeatingSystem/heatingSys.o
+                0x00000000000047a4                autoProgram
  .text.LEDfunction
-                0x00000000000047fc       0x3e ./HeatingSystem/heatingSys.o
-                0x00000000000047fc                LEDfunction
- .text.ButtonAction
-                0x000000000000483a       0x28 ./main.o
-                0x000000000000483a                ButtonAction
+                0x000000000000484c       0x3e ./HeatingSystem/heatingSys.o
+                0x000000000000484c                LEDfunction
+ .text.task_500ms
+                0x000000000000488a        0x4 ./main.o
+                0x000000000000488a                task_500ms
+ .text.task_1min
+                0x000000000000488e        0x4 ./main.o
+                0x000000000000488e                task_1min
+ .text.task_800ms
+                0x0000000000004892       0x28 ./main.o
+                0x0000000000004892                task_800ms
+ .text.task_1sec
+                0x00000000000048ba        0x4 ./main.o
+                0x00000000000048ba                task_1sec
  .text.commandToRelay
-                0x0000000000004862       0x10 ./main.o
-                0x0000000000004862                commandToRelay
+                0x00000000000048be       0x10 ./main.o
+                0x00000000000048be                commandToRelay
+ .text.task_30sec
+                0x00000000000048ce        0x4 ./main.o
+                0x00000000000048ce                task_30sec
  .text.u8g_setup
-                0x0000000000004872       0x1a ./main.o
-                0x0000000000004872                u8g_setup
+                0x00000000000048d2       0x1a ./main.o
+                0x00000000000048d2                u8g_setup
  .text.startup.main
-                0x000000000000488c      0x18a ./main.o
-                0x000000000000488c                main
- .text.draw     0x0000000000004a16      0x1de ./main.o
-                0x0000000000004a16                draw
+                0x00000000000048ec      0x198 ./main.o
+                0x00000000000048ec                main
+ .text.draw     0x0000000000004a84      0x1d6 ./main.o
+                0x0000000000004a84                draw
  .text.showDebugInfo
-                0x0000000000004bf4       0x1a ./main.o
-                0x0000000000004bf4                showDebugInfo
+                0x0000000000004c5a       0x1a ./main.o
+                0x0000000000004c5a                showDebugInfo
  .text.drawTime
-                0x0000000000004c0e      0x130 ./main.o
-                0x0000000000004c0e                drawTime
+                0x0000000000004c74      0x130 ./main.o
+                0x0000000000004c74                drawTime
  .text.showTimeNow
-                0x0000000000004d3e       0x1a ./main.o
-                0x0000000000004d3e                showTimeNow
+                0x0000000000004da4       0x1a ./main.o
+                0x0000000000004da4                showTimeNow
  .text.displayController
-                0x0000000000004d58       0x2a ./main.o
-                0x0000000000004d58                displayController
+                0x0000000000004dbe       0x30 ./main.o
+                0x0000000000004dbe                displayController
+ .text.task_1x5sec
+                0x0000000000004dee        0x4 ./main.o
+                0x0000000000004dee                task_1x5sec
  .text.drawSollTemp
-                0x0000000000004d82       0x64 ./main.o
-                0x0000000000004d82                drawSollTemp
+                0x0000000000004df2       0x64 ./main.o
+                0x0000000000004df2                drawSollTemp
  .text.showSolltemp
-                0x0000000000004de6       0x1a ./main.o
-                0x0000000000004de6                showSolltemp
+                0x0000000000004e56       0x1a ./main.o
+                0x0000000000004e56                showSolltemp
  .text.updateSollTemperature
-                0x0000000000004e00       0x30 ./main.o
-                0x0000000000004e00                updateSollTemperature
+                0x0000000000004e70       0x4e ./main.o
+                0x0000000000004e70                updateSollTemperature
+ .text.task_700ms
+                0x0000000000004ebe        0x8 ./main.o
+                0x0000000000004ebe                task_700ms
  .text.u8g_DrawXBMP
-                0x0000000000004e30      0x110 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_bitmap.o)
-                0x0000000000004e30                u8g_DrawXBMP
+                0x0000000000004ec6      0x110 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_bitmap.o)
+                0x0000000000004ec6                u8g_DrawXBMP
  .text.u8g_draw_circle_section
-                0x0000000000004f40       0xb2 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_circle.o)
+                0x0000000000004fd6       0xb2 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_circle.o)
  .text.u8g_draw_circle
-                0x0000000000004ff2       0x80 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_circle.o)
-                0x0000000000004ff2                u8g_draw_circle
+                0x0000000000005088       0x80 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_circle.o)
+                0x0000000000005088                u8g_draw_circle
  .text.u8g_DrawCircle
-                0x0000000000005072       0x4e /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_circle.o)
-                0x0000000000005072                u8g_DrawCircle
+                0x0000000000005108       0x4e /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_circle.o)
+                0x0000000000005108                u8g_DrawCircle
  .text.u8g_IsBBXIntersection
-                0x00000000000050c0       0x44 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_clip.o)
-                0x00000000000050c0                u8g_IsBBXIntersection
+                0x0000000000005156       0x44 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_clip.o)
+                0x0000000000005156                u8g_IsBBXIntersection
  .text.u8g_dev_ssd1306_128x64_fn
-                0x0000000000005104       0xd6 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
-                0x0000000000005104                u8g_dev_ssd1306_128x64_fn
+                0x000000000000519a       0xd6 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
+                0x000000000000519a                u8g_dev_ssd1306_128x64_fn
  .text.u8g_font_get_word
-                0x00000000000051da       0x18 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x0000000000005270       0x18 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
  .text.u8g_font_GetFormat
-                0x00000000000051f2        0x6 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x0000000000005288        0x6 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
  .text.u8g_font_GetFontGlyphStructureSize
-                0x00000000000051f8       0x14 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x000000000000528e       0x14 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
  .text.u8g_font_calc_vref_font
-                0x000000000000520c        0x4 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
-                0x000000000000520c                u8g_font_calc_vref_font
+                0x00000000000052a2        0x4 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x00000000000052a2                u8g_font_calc_vref_font
  .text.u8g_font_GetEncoding65Pos
-                0x0000000000005210        0x6 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
-                0x0000000000005210                u8g_font_GetEncoding65Pos
+                0x00000000000052a6        0x6 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x00000000000052a6                u8g_font_GetEncoding65Pos
  .text.u8g_font_GetEncoding97Pos
-                0x0000000000005216        0x6 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
-                0x0000000000005216                u8g_font_GetEncoding97Pos
+                0x00000000000052ac        0x6 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x00000000000052ac                u8g_font_GetEncoding97Pos
  .text.u8g_font_GetFontStartEncoding
-                0x000000000000521c        0x8 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
-                0x000000000000521c                u8g_font_GetFontStartEncoding
+                0x00000000000052b2        0x8 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x00000000000052b2                u8g_font_GetFontStartEncoding
  .text.u8g_font_GetFontEndEncoding
-                0x0000000000005224        0x8 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
-                0x0000000000005224                u8g_font_GetFontEndEncoding
+                0x00000000000052ba        0x8 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x00000000000052ba                u8g_font_GetFontEndEncoding
  .text.u8g_GetGlyph
-                0x000000000000522c      0x14a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
-                0x000000000000522c                u8g_GetGlyph
+                0x00000000000052c2      0x14a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x00000000000052c2                u8g_GetGlyph
  .text.u8g_draw_glyph
-                0x0000000000005376       0xd8 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
-                0x0000000000005376                u8g_draw_glyph
+                0x000000000000540c       0xd8 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x000000000000540c                u8g_draw_glyph
  .text.u8g_DrawStr
-                0x000000000000544e       0x6e /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
-                0x000000000000544e                u8g_DrawStr
+                0x00000000000054e4       0x6e /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x00000000000054e4                u8g_DrawStr
  .text.u8g_UpdateRefHeight
-                0x00000000000054bc       0x90 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
-                0x00000000000054bc                u8g_UpdateRefHeight
+                0x0000000000005552       0x90 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x0000000000005552                u8g_UpdateRefHeight
  .text.u8g_SetFontPosBaseline
-                0x000000000000554c        0xc /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
-                0x000000000000554c                u8g_SetFontPosBaseline
+                0x00000000000055e2        0xc /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x00000000000055e2                u8g_SetFontPosBaseline
  .text.u8g_SetFont
-                0x0000000000005558       0x28 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
-                0x0000000000005558                u8g_SetFont
+                0x00000000000055ee       0x28 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_font.o)
+                0x00000000000055ee                u8g_SetFont
  .text.u8g_init_data
-                0x0000000000005580       0x5a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x0000000000005616       0x5a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
  .text.u8g_call_dev_fn
-                0x00000000000055da        0x8 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x00000000000055da                u8g_call_dev_fn
+                0x0000000000005670        0x8 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x0000000000005670                u8g_call_dev_fn
  .text.u8g_InitLL
-                0x00000000000055e2       0x64 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x00000000000055e2                u8g_InitLL
+                0x0000000000005678       0x64 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x0000000000005678                u8g_InitLL
  .text.u8g_FirstPageLL
-                0x0000000000005646       0x4a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x0000000000005646                u8g_FirstPageLL
+                0x00000000000056dc       0x4a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x00000000000056dc                u8g_FirstPageLL
  .text.u8g_NextPageLL
-                0x0000000000005690       0x58 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x0000000000005690                u8g_NextPageLL
+                0x0000000000005726       0x58 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x0000000000005726                u8g_NextPageLL
  .text.u8g_DrawPixelLL
-                0x00000000000056e8       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x00000000000056e8                u8g_DrawPixelLL
+                0x000000000000577e       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x000000000000577e                u8g_DrawPixelLL
  .text.u8g_GetWidthLL
-                0x00000000000056fa       0x20 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x00000000000056fa                u8g_GetWidthLL
+                0x0000000000005790       0x20 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x0000000000005790                u8g_GetWidthLL
  .text.u8g_GetHeightLL
-                0x000000000000571a       0x20 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x000000000000571a                u8g_GetHeightLL
+                0x00000000000057b0       0x20 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x00000000000057b0                u8g_GetHeightLL
  .text.u8g_GetModeLL
-                0x000000000000573a        0xa /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x000000000000573a                u8g_GetModeLL
+                0x00000000000057d0        0xa /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x00000000000057d0                u8g_GetModeLL
  .text.u8g_UpdateDimension
-                0x0000000000005744       0x3e /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x0000000000005744                u8g_UpdateDimension
+                0x00000000000057da       0x3e /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x00000000000057da                u8g_UpdateDimension
  .text.u8g_Begin
-                0x0000000000005782       0x24 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x0000000000005782                u8g_Begin
+                0x0000000000005818       0x24 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x0000000000005818                u8g_Begin
  .text.u8g_InitI2C
-                0x00000000000057a6       0x3a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x00000000000057a6                u8g_InitI2C
+                0x000000000000583c       0x3a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x000000000000583c                u8g_InitI2C
  .text.u8g_FirstPage
-                0x00000000000057e0        0xa /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x00000000000057e0                u8g_FirstPage
+                0x0000000000005876        0xa /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x0000000000005876                u8g_FirstPage
  .text.u8g_NextPage
-                0x00000000000057ea       0x1e /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x00000000000057ea                u8g_NextPage
+                0x0000000000005880       0x1e /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x0000000000005880                u8g_NextPage
  .text.u8g_DrawPixel
-                0x0000000000005808       0x10 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x0000000000005808                u8g_DrawPixel
+                0x000000000000589e       0x10 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x000000000000589e                u8g_DrawPixel
  .text.u8g_Draw8Pixel
-                0x0000000000005818       0x22 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
-                0x0000000000005818                u8g_Draw8Pixel
+                0x00000000000058ae       0x22 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_ll_api.o)
+                0x00000000000058ae                u8g_Draw8Pixel
  .text.u8g_pb_Clear
-                0x000000000000583a       0x20 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb.o)
-                0x000000000000583a                u8g_pb_Clear
+                0x00000000000058d0       0x20 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb.o)
+                0x00000000000058d0                u8g_pb_Clear
  .text.u8g_pb_IsYIntersection
-                0x000000000000585a       0x2a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb.o)
-                0x000000000000585a                u8g_pb_IsYIntersection
+                0x00000000000058f0       0x2a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb.o)
+                0x00000000000058f0                u8g_pb_IsYIntersection
  .text.u8g_pb_GetPageBox
-                0x0000000000005884       0x20 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb.o)
-                0x0000000000005884                u8g_pb_GetPageBox
+                0x000000000000591a       0x20 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb.o)
+                0x000000000000591a                u8g_pb_GetPageBox
  .text.u8g_pb_Is8PixelVisible
-                0x00000000000058a4       0x20 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb.o)
-                0x00000000000058a4                u8g_pb_Is8PixelVisible
+                0x000000000000593a       0x20 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb.o)
+                0x000000000000593a                u8g_pb_Is8PixelVisible
  .text.u8g_pb_WriteBuffer
-                0x00000000000058c4       0x10 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb.o)
-                0x00000000000058c4                u8g_pb_WriteBuffer
+                0x000000000000595a       0x10 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb.o)
+                0x000000000000595a                u8g_pb_WriteBuffer
  .text.u8g_pb8v1_set_pixel
-                0x00000000000058d4       0x36 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb8v1.o)
-                0x00000000000058d4                u8g_pb8v1_set_pixel
+                0x000000000000596a       0x36 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb8v1.o)
+                0x000000000000596a                u8g_pb8v1_set_pixel
  .text.u8g_pb8v1_SetPixel
-                0x000000000000590a       0x2c /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb8v1.o)
-                0x000000000000590a                u8g_pb8v1_SetPixel
+                0x00000000000059a0       0x2c /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb8v1.o)
+                0x00000000000059a0                u8g_pb8v1_SetPixel
  .text.u8g_pb8v1_Set8PixelOpt2
-                0x0000000000005936       0x7e /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb8v1.o)
-                0x0000000000005936                u8g_pb8v1_Set8PixelOpt2
+                0x00000000000059cc       0x7e /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb8v1.o)
+                0x00000000000059cc                u8g_pb8v1_Set8PixelOpt2
  .text.u8g_dev_pb8v1_base_fn
-                0x00000000000059b4       0x92 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb8v1.o)
-                0x00000000000059b4                u8g_dev_pb8v1_base_fn
+                0x0000000000005a4a       0x92 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_pb8v1.o)
+                0x0000000000005a4a                u8g_dev_pb8v1_base_fn
  .text.u8g_state_dummy_cb
-                0x0000000000005a46        0x2 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_state.o)
-                0x0000000000005a46                u8g_state_dummy_cb
+                0x0000000000005adc        0x2 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_state.o)
+                0x0000000000005adc                u8g_state_dummy_cb
  .text.u8g_InitCom
-                0x0000000000005a48       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
-                0x0000000000005a48                u8g_InitCom
+                0x0000000000005ade       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
+                0x0000000000005ade                u8g_InitCom
  .text.u8g_SetChipSelect
-                0x0000000000005a5a       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
-                0x0000000000005a5a                u8g_SetChipSelect
+                0x0000000000005af0       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
+                0x0000000000005af0                u8g_SetChipSelect
  .text.u8g_SetResetLow
-                0x0000000000005a6c       0x14 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
-                0x0000000000005a6c                u8g_SetResetLow
+                0x0000000000005b02       0x14 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
+                0x0000000000005b02                u8g_SetResetLow
  .text.u8g_SetResetHigh
-                0x0000000000005a80       0x14 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
-                0x0000000000005a80                u8g_SetResetHigh
+                0x0000000000005b16       0x14 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
+                0x0000000000005b16                u8g_SetResetHigh
  .text.u8g_SetAddress
-                0x0000000000005a94       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
-                0x0000000000005a94                u8g_SetAddress
+                0x0000000000005b2a       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
+                0x0000000000005b2a                u8g_SetAddress
  .text.u8g_WriteByte
-                0x0000000000005aa6       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
-                0x0000000000005aa6                u8g_WriteByte
+                0x0000000000005b3c       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
+                0x0000000000005b3c                u8g_WriteByte
  .text.u8g_WriteSequence
-                0x0000000000005ab8        0xe /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
-                0x0000000000005ab8                u8g_WriteSequence
+                0x0000000000005b4e        0xe /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
+                0x0000000000005b4e                u8g_WriteSequence
  .text.u8g_WriteEscSeqP
-                0x0000000000005ac6       0xcc /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
-                0x0000000000005ac6                u8g_WriteEscSeqP
+                0x0000000000005b5c       0xcc /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_api.o)
+                0x0000000000005b5c                u8g_WriteEscSeqP
  .text.u8g_com_arduino_ssd_start_sequence
-                0x0000000000005b92       0x38 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_arduino_ssd_i2c.o)
-                0x0000000000005b92                u8g_com_arduino_ssd_start_sequence
+                0x0000000000005c28       0x38 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_arduino_ssd_i2c.o)
+                0x0000000000005c28                u8g_com_arduino_ssd_start_sequence
  .text.u8g_com_arduino_ssd_i2c_fn
-                0x0000000000005bca       0xae /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_arduino_ssd_i2c.o)
-                0x0000000000005bca                u8g_com_arduino_ssd_i2c_fn
+                0x0000000000005c60       0xae /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_arduino_ssd_i2c.o)
+                0x0000000000005c60                u8g_com_arduino_ssd_i2c_fn
  .text.u8g_i2c_set_error
-                0x0000000000005c78       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
+                0x0000000000005d0e       0x12 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
  .text.u8g_i2c_clear_error
-                0x0000000000005c8a        0xa /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
-                0x0000000000005c8a                u8g_i2c_clear_error
+                0x0000000000005d20        0xa /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
+                0x0000000000005d20                u8g_i2c_clear_error
  .text.u8g_i2c_init
-                0x0000000000005c94       0x1a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
-                0x0000000000005c94                u8g_i2c_init
+                0x0000000000005d2a       0x1a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
+                0x0000000000005d2a                u8g_i2c_init
  .text.u8g_i2c_wait
-                0x0000000000005cae       0x4a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
-                0x0000000000005cae                u8g_i2c_wait
+                0x0000000000005d44       0x4a /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
+                0x0000000000005d44                u8g_i2c_wait
  .text.u8g_i2c_start
-                0x0000000000005cf8       0x62 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
-                0x0000000000005cf8                u8g_i2c_start
+                0x0000000000005d8e       0x62 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
+                0x0000000000005d8e                u8g_i2c_start
  .text.u8g_i2c_send_byte
-                0x0000000000005d5a       0x38 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
-                0x0000000000005d5a                u8g_i2c_send_byte
+                0x0000000000005df0       0x38 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
+                0x0000000000005df0                u8g_i2c_send_byte
  .text.u8g_i2c_stop
-                0x0000000000005d92        0xe /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
-                0x0000000000005d92                u8g_i2c_stop
+                0x0000000000005e28        0xe /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
+                0x0000000000005e28                u8g_i2c_stop
  .text.u8g_Delay
-                0x0000000000005da0       0x14 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_delay.o)
-                0x0000000000005da0                u8g_Delay
+                0x0000000000005e36       0x14 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_delay.o)
+                0x0000000000005e36                u8g_Delay
  .text.u8g_page_First
-                0x0000000000005db4        0xe /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_page.o)
-                0x0000000000005db4                u8g_page_First
+                0x0000000000005e4a        0xe /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_page.o)
+                0x0000000000005e4a                u8g_page_First
  .text.u8g_page_Next
-                0x0000000000005dc2       0x2c /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_page.o)
-                0x0000000000005dc2                u8g_page_Next
+                0x0000000000005e58       0x2c /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_page.o)
+                0x0000000000005e58                u8g_page_Next
  .text.libgcc.mul
-                0x0000000000005dee       0x10 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_mulshisi3.o)
-                0x0000000000005dee                __mulshisi3
-                0x0000000000005df4                __mulohisi3
+                0x0000000000005e84       0x10 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_mulshisi3.o)
+                0x0000000000005e84                __mulshisi3
+                0x0000000000005e8a                __mulohisi3
  .text.libgcc.div
-                0x0000000000005dfe       0x18 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodqi4.o)
-                0x0000000000005dfe                __udivmodqi4
+                0x0000000000005e94       0x18 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodqi4.o)
+                0x0000000000005e94                __udivmodqi4
  .text.libgcc.div
-                0x0000000000005e16       0x28 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_divmodhi4.o)
-                0x0000000000005e16                __divmodhi4
-                0x0000000000005e16                _div
+                0x0000000000005eac       0x28 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_divmodhi4.o)
+                0x0000000000005eac                __divmodhi4
+                0x0000000000005eac                _div
  .text.libgcc.div
-                0x0000000000005e3e       0x2e /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_divmodsi4.o)
-                0x0000000000005e3e                __divmodsi4
+                0x0000000000005ed4       0x2e /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_divmodsi4.o)
+                0x0000000000005ed4                __divmodsi4
  .text.libgcc.div
-                0x0000000000005e6c       0x10 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_negsi2.o)
-                0x0000000000005e6c                __negsi2
+                0x0000000000005f02       0x10 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_negsi2.o)
+                0x0000000000005f02                __negsi2
  .text.libgcc.mul
-                0x0000000000005e7c       0x16 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_muluhisi3.o)
-                0x0000000000005e7c                __muluhisi3
+                0x0000000000005f12       0x16 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_muluhisi3.o)
+                0x0000000000005f12                __muluhisi3
  .text.libgcc.div
-                0x0000000000005e92       0x28 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
-                0x0000000000005e92                __udivmodhi4
+                0x0000000000005f28       0x28 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+                0x0000000000005f28                __udivmodhi4
  .text.libgcc.div
-                0x0000000000005eba       0x44 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
-                0x0000000000005eba                __udivmodsi4
+                0x0000000000005f50       0x44 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+                0x0000000000005f50                __udivmodsi4
  .text.libgcc.mul
-                0x0000000000005efe       0x1e /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
-                0x0000000000005efe                __umulhisi3
+                0x0000000000005f94       0x1e /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+                0x0000000000005f94                __umulhisi3
  .text.avr-libc.fplib
-                0x0000000000005f1c        0xa /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fixsfsi.o)
-                0x0000000000005f1c                __fixsfsi
+                0x0000000000005fb2        0xa /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fixsfsi.o)
+                0x0000000000005fb2                __fixsfsi
  .text.avr-libc.fplib
-                0x0000000000005f26       0x58 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
-                0x0000000000005f26                __fixunssfsi
+                0x0000000000005fbc       0x58 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                0x0000000000005fbc                __fixunssfsi
  .text.avr-libc.fplib
-                0x0000000000005f7e       0x7a /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(floatsisf.o)
-                0x0000000000005f7e                __floatunsisf
-                0x0000000000005f82                __floatsisf
+                0x0000000000006014       0x7a /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(floatsisf.o)
+                0x0000000000006014                __floatunsisf
+                0x0000000000006018                __floatsisf
  .text.avr-libc.fplib
-                0x0000000000005ff8       0x44 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_split3.o)
-                0x0000000000005ff8                __fp_split3
-                0x0000000000006008                __fp_splitA
+                0x000000000000608e       0x44 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_split3.o)
+                0x000000000000608e                __fp_split3
+                0x000000000000609e                __fp_splitA
  .text.avr-libc.fplib
-                0x000000000000603c        0xe /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_zero.o)
-                0x000000000000603c                __fp_zero
-                0x000000000000603e                __fp_szero
+                0x00000000000060d2        0xe /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_zero.o)
+                0x00000000000060d2                __fp_zero
+                0x00000000000060d4                __fp_szero
  .text.avr-libc.fplib
-                0x000000000000604a        0x4 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(mulsf3.o)
-                0x000000000000604a                __mulsf3
+                0x00000000000060e0        0x4 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(mulsf3.o)
+                0x00000000000060e0                __mulsf3
  .text.avr-libc.fplib
-                0x000000000000604e       0xc2 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
-                0x0000000000006062                __mulsf3x
-                0x0000000000006066                __mulsf3_pse
+                0x00000000000060e4       0xc2 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                0x00000000000060f8                __mulsf3x
+                0x00000000000060fc                __mulsf3_pse
  .text.avr-libc.fplib
-                0x0000000000006110       0x40 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(round.o)
-                0x0000000000006110                round
+                0x00000000000061a6       0x40 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(round.o)
+                0x00000000000061a6                round
  .text.avr-libc.fplib
-                0x0000000000006150        0xc /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_inf.o)
-                0x0000000000006150                __fp_inf
+                0x00000000000061e6        0xc /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_inf.o)
+                0x00000000000061e6                __fp_inf
  .text.avr-libc.fplib
-                0x000000000000615c       0x36 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_mintl.o)
-                0x000000000000615c                __fp_mintl
+                0x00000000000061f2       0x36 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_mintl.o)
+                0x00000000000061f2                __fp_mintl
  .text.avr-libc.fplib
-                0x0000000000006192       0x1c /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_mpack.o)
-                0x0000000000006192                __fp_mpack
-                0x0000000000006196                __fp_mpack_finite
+                0x0000000000006228       0x1c /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_mpack.o)
+                0x0000000000006228                __fp_mpack
+                0x000000000000622c                __fp_mpack_finite
  .text.avr-libc.fplib
-                0x00000000000061ae        0x6 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_nan.o)
-                0x00000000000061ae                __fp_nan
+                0x0000000000006244        0x6 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_nan.o)
+                0x0000000000006244                __fp_nan
  .text.avr-libc.fplib
-                0x00000000000061b4        0xe /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
-                0x00000000000061b4                __fp_pscA
+                0x000000000000624a        0xe /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                0x000000000000624a                __fp_pscA
  .text.avr-libc.fplib
-                0x00000000000061c2        0xe /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
-                0x00000000000061c2                __fp_pscB
+                0x0000000000006258        0xe /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                0x0000000000006258                __fp_pscB
  .text.avr-libc.fplib
-                0x00000000000061d0       0x22 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_round.o)
-                0x00000000000061d0                __fp_round
+                0x0000000000006266       0x22 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libm.a(fp_round.o)
+                0x0000000000006266                __fp_round
  .text.avr-libc
-                0x00000000000061f2       0x44 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(sprintf.o)
-                0x00000000000061f2                sprintf
+                0x0000000000006288       0x44 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(sprintf.o)
+                0x0000000000006288                sprintf
  .text.avr-libc
-                0x0000000000006236       0x44 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(sprintf_p.o)
-                0x0000000000006236                sprintf_P
+                0x00000000000062cc       0x44 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(sprintf_p.o)
+                0x00000000000062cc                sprintf_P
  .text.avr-libc
-                0x000000000000627a      0x3a4 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(vfprintf_std.o)
-                0x000000000000627a                vfprintf
+                0x0000000000006310      0x3a4 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(vfprintf_std.o)
+                0x0000000000006310                vfprintf
  .text.avr-libc
-                0x000000000000661e       0x20 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(eerd_block_atmega328.o)
-                0x000000000000661e                __eerd_block_m328
-                0x0000000000006622                __eerd_blraw_m328
+                0x00000000000066b4       0x20 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(eerd_block_atmega328.o)
+                0x00000000000066b4                __eerd_block_m328
+                0x00000000000066b8                __eerd_blraw_m328
  .text.avr-libc
-                0x000000000000663e       0x16 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(strnlen_P.o)
-                0x000000000000663e                strnlen_P
+                0x00000000000066d4       0x16 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(strnlen_P.o)
+                0x00000000000066d4                strnlen_P
  .text.avr-libc
-                0x0000000000006654       0x16 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(strnlen.o)
-                0x0000000000006654                strnlen
+                0x00000000000066ea       0x16 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(strnlen.o)
+                0x00000000000066ea                strnlen
  .text.avr-libc
-                0x000000000000666a       0x64 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(fputc.o)
-                0x000000000000666a                fputc
+                0x0000000000006700       0x64 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(fputc.o)
+                0x0000000000006700                fputc
  .text.avr-libc
-                0x00000000000066ce       0xbc /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(ultoa_invert.o)
-                0x00000000000066ce                __ultoa_invert
+                0x0000000000006764       0xbc /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/libc.a(ultoa_invert.o)
+                0x0000000000006764                __ultoa_invert
  .text.libgcc.prologue
-                0x000000000000678a       0x38 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_prologue.o)
-                0x000000000000678a                __prologue_saves__
+                0x0000000000006820       0x38 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_prologue.o)
+                0x0000000000006820                __prologue_saves__
  .text.libgcc.prologue
-                0x00000000000067c2       0x36 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_epilogue.o)
-                0x00000000000067c2                __epilogue_restores__
-                0x00000000000067f8                . = ALIGN (0x2)
+                0x0000000000006858       0x36 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_epilogue.o)
+                0x0000000000006858                __epilogue_restores__
+                0x000000000000688e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000000000067f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
-                0x00000000000067f8                exit
-                0x00000000000067f8                _exit
+ .fini9         0x000000000000688e        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+                0x000000000000688e                exit
+                0x000000000000688e                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -2400,11 +2425,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000000000067f8        0x4 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .fini0         0x000000000000688e        0x4 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x00000000000067fc                _etext = .
+                0x0000000000006892                _etext = .
 
-.data           0x0000000000800100       0xf0 load address 0x00000000000067fc
+.data           0x0000000000800100       0xf0 load address 0x0000000000006892
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x0000000000800100        0x0 /usr/lib/gcc/avr/4.8.2/../../../../avr/lib/avr5/crtm328.o
@@ -2507,7 +2532,7 @@ END GROUP
                 0x00000000008001f0                _edata = .
                 0x00000000008001f0                PROVIDE (__data_end, .)
 
-.bss            0x00000000008001f0      0x1e0
+.bss            0x00000000008001f0      0x1e5
                 0x00000000008001f0                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -2528,70 +2553,79 @@ END GROUP
  .bss.signalButton
                 0x00000000008001f8        0x1 ./RotaryEncoderButton/RtrEncdBtn.o
                 0x00000000008001f8                signalButton
- .bss.doubleClicked
+ .bss.smartCntFlag
                 0x00000000008001f9        0x1 ./RotaryEncoderButton/RtrEncdBtn.o
-                0x00000000008001f9                doubleClicked
- .bss.clicked   0x00000000008001fa        0x1 ./RotaryEncoderButton/RtrEncdBtn.o
-                0x00000000008001fa                clicked
- .bss.holdCnt   0x00000000008001fb        0x1 ./RotaryEncoderButton/RtrEncdBtn.o
-                0x00000000008001fb                holdCnt
- .bss.pnt       0x00000000008001fc        0x1 ./RotaryEncoderButton/RtrEncdBtn.o
+                0x00000000008001f9                smartCntFlag
+ .bss.smartCntDown
+                0x00000000008001fa        0x1 ./RotaryEncoderButton/RtrEncdBtn.o
+                0x00000000008001fa                smartCntDown
+ .bss.smartCntUp
+                0x00000000008001fb        0x1 ./RotaryEncoderButton/RtrEncdBtn.o
+                0x00000000008001fb                smartCntUp
+ .bss.doubleClicked
+                0x00000000008001fc        0x1 ./RotaryEncoderButton/RtrEncdBtn.o
+                0x00000000008001fc                doubleClicked
+ .bss.clicked   0x00000000008001fd        0x1 ./RotaryEncoderButton/RtrEncdBtn.o
+                0x00000000008001fd                clicked
+ .bss.holdCnt   0x00000000008001fe        0x1 ./RotaryEncoderButton/RtrEncdBtn.o
+                0x00000000008001fe                holdCnt
+ .bss.pnt       0x00000000008001ff        0x1 ./RotaryEncoderButton/RtrEncdBtn.o
  .bss.ArrayOfClicks
-                0x00000000008001fd       0x19 ./RotaryEncoderButton/RtrEncdBtn.o
+                0x0000000000800200       0x19 ./RotaryEncoderButton/RtrEncdBtn.o
  .bss.autoProgramTimeEnabled
-                0x0000000000800216        0x1 ./HeatingSystem/heatingSys.o
-                0x0000000000800216                autoProgramTimeEnabled
- .bss.count.4055
-                0x0000000000800217        0x1 ./main.o
+                0x0000000000800219        0x1 ./HeatingSystem/heatingSys.o
+                0x0000000000800219                autoProgramTimeEnabled
+ .bss.count.4096
+                0x000000000080021a        0x1 ./main.o
  .bss.u8g_dev_ssd1306_128x64_i2c_buf
-                0x0000000000800218       0x80 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
-                0x0000000000800218                u8g_dev_ssd1306_128x64_i2c_buf
+                0x000000000080021b       0x80 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_dev_ssd1306_128x64.o)
+                0x000000000080021b                u8g_dev_ssd1306_128x64_i2c_buf
  .bss.u8g_i2c_err_pos
-                0x0000000000800298        0x1 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
+                0x000000000080029b        0x1 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
  .bss.u8g_i2c_opt
-                0x0000000000800299        0x1 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
+                0x000000000080029c        0x1 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
  .bss.u8g_i2c_err_code
-                0x000000000080029a        0x1 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
+                0x000000000080029d        0x1 /home/unix/Arduino/Thermostat_RottaryButton/Phaethon/atmega328_Core/u8glib/Debug/libu8glib.a(u8g_com_i2c.o)
  *(COMMON)
- COMMON         0x000000000080029b       0x51 ./timerInterrupt/timerInterrupt.o
-                0x000000000080029b                counter100MS
-                0x000000000080029c                task_list
- COMMON         0x00000000008002ec       0x19 ./eeprom_calib/eeprom_calib.o
-                0x00000000008002ec                CALinRAM
- COMMON         0x0000000000800305       0x49 ./ds1307/ds1307.o
-                0x0000000000800305                u8g
-                0x000000000080033c                buff
-                0x0000000000800344                temp
-                0x0000000000800346                mystr
- COMMON         0x000000000080034e       0x32 ./ctrlSystem/Ctrl_Subsystem.o
-                0x000000000080034e                isCoolingOn
-                0x000000000080034f                inputValue_Coolg
-                0x0000000000800351                inputValue_Htng
-                0x0000000000800353                pidData_Coolg
-                0x0000000000800365                isHeatingOn
-                0x0000000000800366                selectProgram
-                0x0000000000800367                Ctrl_Subsystem_DW
-                0x0000000000800369                stateOfProgram
-                0x000000000080036a                Ctrl_Subsystem_Y
-                0x000000000080036e                pidData_Htng
- COMMON         0x0000000000800380       0x50 ./main.o
-                0x0000000000800380                buf
-                0x00000000008003d0                PROVIDE (__bss_end, .)
-                0x00000000000067fc                __data_load_start = LOADADDR (.data)
-                0x00000000000068ec                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x000000000080029e       0x51 ./timerInterrupt/timerInterrupt.o
+                0x000000000080029e                counter100MS
+                0x000000000080029f                task_list
+ COMMON         0x00000000008002ef       0x1b ./eeprom_calib/eeprom_calib.o
+                0x00000000008002ef                CALinRAM
+ COMMON         0x000000000080030a       0x49 ./ds1307/ds1307.o
+                0x000000000080030a                u8g
+                0x0000000000800341                buff
+                0x0000000000800349                temp
+                0x000000000080034b                mystr
+ COMMON         0x0000000000800353       0x32 ./ctrlSystem/Ctrl_Subsystem.o
+                0x0000000000800353                isCoolingOn
+                0x0000000000800354                inputValue_Coolg
+                0x0000000000800356                inputValue_Htng
+                0x0000000000800358                pidData_Coolg
+                0x000000000080036a                isHeatingOn
+                0x000000000080036b                selectProgram
+                0x000000000080036c                Ctrl_Subsystem_DW
+                0x000000000080036e                stateOfProgram
+                0x000000000080036f                Ctrl_Subsystem_Y
+                0x0000000000800373                pidData_Htng
+ COMMON         0x0000000000800385       0x50 ./main.o
+                0x0000000000800385                buf
+                0x00000000008003d5                PROVIDE (__bss_end, .)
+                0x0000000000006892                __data_load_start = LOADADDR (.data)
+                0x0000000000006982                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00000000008003d0        0x0
-                0x00000000008003d0                PROVIDE (__noinit_start, .)
+.noinit         0x00000000008003d5        0x0
+                0x00000000008003d5                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00000000008003d0                PROVIDE (__noinit_end, .)
-                0x00000000008003d0                _end = .
-                0x00000000008003d0                PROVIDE (__heap_start, .)
+                0x00000000008003d5                PROVIDE (__noinit_end, .)
+                0x00000000008003d5                _end = .
+                0x00000000008003d5                PROVIDE (__heap_start, .)
 
-.eeprom         0x0000000000810000       0x19
+.eeprom         0x0000000000810000       0x1b
  *(.eeprom*)
- .eeprom        0x0000000000810000       0x19 ./eeprom_calib/eeprom_calib.o
+ .eeprom        0x0000000000810000       0x1b ./eeprom_calib/eeprom_calib.o
                 0x0000000000810000                CALinEE
-                0x0000000000810019                __eeprom_end = .
+                0x000000000081001b                __eeprom_end = .
 
 .fuse
  *(.fuse)

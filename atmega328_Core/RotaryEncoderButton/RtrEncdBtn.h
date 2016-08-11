@@ -13,11 +13,13 @@ void initRtrEncoder();
 void inline attacheInterrupt(void);
 void inline checkHoldButton(void);
 void checkStruct();
+void resetSmartCnt(void);
 uint8_t returnStateofProgram();
+void smartChangeBtwnHeatCool(void);
 
 extern volatile bool TurnDetected;
 extern volatile bool up;
-
+extern int8_t SOLLtemperature;
 typedef struct {
 long int timeOfClick;
 bool clicked;

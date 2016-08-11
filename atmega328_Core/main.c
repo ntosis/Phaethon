@@ -14,7 +14,13 @@
 //#include "pinmacros.h"
 
 void updateSollTemperature();
-void ButtonAction(void);
+void task_800ms(void);
+void task_700ms(void);
+void task_30sec(void);
+void task_500ms(void);
+void task_1min(void);
+void task_1sec(void);
+void task_1x5sec(void);
 void displayController(void);
 void commandToRelay(void);
 void u8g_setup(void);
@@ -32,6 +38,9 @@ extern int16_t inputValue_Htng;
 extern int16_t inputValue_Coolg;
 extern ExtY_Ctrl_Subsystem Ctrl_Subsystem_Y;
 extern boolean_T isHeatingOn;
+extern uint8_t smartCntUp;
+extern uint8_t smartCntDown;
+extern uint8_t smartCntFlag;
 char buf[80];
 
 int main(void)
@@ -57,19 +66,22 @@ int main(void)
     //showTime();
 	// add tasks, id is arbitrary
 	// task1 runs every 800ms second
-	addTask(1,ButtonAction, 8);
+	addTask(1,task_800ms, 8);
 	// task2 runs every 700ms seconds
-	addTask(2,updateSollTemperature,7);
+	addTask(2,task_700ms,7);
 	// task3 runs every 1 seconds
-	addTask(3, Ctrl_Subsystem_step, 10);
+	addTask(3, task_1sec, 10);
 	// task4 runs every 1.5 seconds
-	addTask(4, displayController, 15);
+	addTask(4, task_1x5sec,15);
 	//task5
-	addTask(5, LEDfunction, 5);
+	addTask(5, task_500ms, 5);
 	//task 6 autoProgram runs every a min
-	addTask(6,autoProgram,600);
+	addTask(6,task_1min,600);
 	//send command to relay
-	addTask(7, commandToRelay,400);
+	addTask(7, task_30sec,300);
+
+	addTask(7, resetSmartCnt,30);
+
 	//addTask(7, showActualTemperature,10);
 	//enable interrupts
 	sei();
@@ -80,21 +92,53 @@ int main(void)
 
   }
 }
+void task_30sec(void) {
+	commandToRelay();
+}
+
+void task_500ms(void) {
+	LEDfunction();
+}
+
+void task_1min(void) {
+	autoProgram();
+}
+
+void task_700ms(void) {
+	updateSollTemperature();
+	smartChangeBtwnHeatCool();
+}
+
+void task_800ms(void) {
+	checkStruct();
+	checkHoldButton(); //inline function to check hold buton.();
+}
+void task_1sec(void) {
+
+	Ctrl_Subsystem_step();
+}
+void task_1x5sec(void) {
+	displayController();
+}
+
 void updateSollTemperature() {
 
 	 if (TurnDetected&&stateOfProgram) {
-  if (up)
-      SOLLtemperature--;
-    else
-      SOLLtemperature++;
-    showSolltemp();
- }
+		 smartCntFlag=1;
+
+		 	 if (up) {
+		 		 	 	 SOLLtemperature--;
+		 		 	 	 smartCntDown++;
+		 		 	 	 showSolltemp();
+		 	 }
+		 	 else {
+		 		 	 	 SOLLtemperature++;
+		 		 	 	 smartCntUp++;
+		 		 	 	 showSolltemp();
+		 	 }
+	 	 }
      TurnDetected = false;    // do NOT repeat IF loop until new rotation detected
 
-}
-void ButtonAction(void) {
-	checkStruct();
-	checkHoldButton(); //inline function to check hold buton.();
 }
 //The pin have to be HIGH to turn off the heating system
 void commandToRelay() {
@@ -111,7 +155,7 @@ void displayController() {
 	count++;
 	switch(count) {
 	case 1:
-		showDebugInfo();
+		if(debugInfosFlag_C) { showDebugInfo(); }
 		break;
 	case 3:
 		showTimeNow();
@@ -139,13 +183,13 @@ void draw(void)
   u8g_DrawStr(&u8g, 0,30,buf);
   sprintf_P(buf,PSTR("TmEnb= %d"),autoProgramTimeEnabled);
   u8g_DrawStr(&u8g, 0,40,buf);
-  sprintf_P(buf,PSTR("PID_H= %d"),inputValue_Htng);
+  sprintf_P(buf,PSTR("CountDown= %d"),smartCntDown);
   u8g_DrawStr(&u8g, 0,50,buf);
-  sprintf_P(buf,PSTR("PID_C= %d"),inputValue_Coolg);
+  sprintf_P(buf,PSTR("CountUp= %d"),smartCntUp);
   u8g_DrawStr(&u8g, 0,60,buf);
   sprintf_P(buf,PSTR("Relay= %d"),Ctrl_Subsystem_Y.Out1);
   u8g_DrawStr(&u8g, 65,10,buf);
-  sprintf_P(buf,PSTR("Day= %d"),GetDoW());
+  sprintf_P(buf,PSTR("FLAG= %d"),smartCntFlag);
   u8g_DrawStr(&u8g, 65,20,buf);
   int T = roundf(actualTemperature());
   sprintf_P(buf,PSTR("Tem/re=%d"),T);
